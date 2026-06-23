@@ -40,7 +40,9 @@ header{padding:22px 2px 14px}
 .streaks{display:flex;gap:8px;margin:16px 0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
 .streaks::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r3);padding:8px 11px;display:flex;align-items:center;gap:7px;min-width:max-content}
-.chip .flame{font-size:15px}
+.chip .flame{font-size:15px;display:inline-flex;align-items:center}
+.chip .flame svg{width:15px;height:15px;display:block}
+.ci svg{display:block}
 .chip .n{font-size:15px;font-weight:700}
 .chip .cl{font-size:10px;color:var(--txt3);text-transform:uppercase;letter-spacing:.5px}
 .chip.perfect{border-color:var(--accent2)}
@@ -60,6 +62,7 @@ header{padding:22px 2px 14px}
 .tick.on{background:var(--good);border-color:var(--good);color:#0f1115}
 .ci{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px}
 .ci.breath{background:rgba(91,155,213,.16)}
+.ci.meds{background:rgba(219,140,170,.16)}
 .ci.med{background:rgba(155,140,219,.16)}
 .ci.elec{background:rgba(244,162,89,.16)}
 .ci.jour{background:rgba(111,207,151,.16)}
@@ -297,6 +300,19 @@ const EFFORTS = [
 
 const TASKS = [
   {
+    id:'meds', icon:'💊', cls:'meds', title:'Medication',
+    iconSvg:'<svg width="22" height="22" viewBox="-16 -16 32 32" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-40)" fill="none" stroke="#db8caa" stroke-width="3"><rect x="-8" y="-13.5" width="16" height="27" rx="8"/><line x1="-8" y1="0" x2="8" y2="0"/></g></svg>',
+    sub:'3 to take',
+    type:'subs',
+    subs:[
+      {id:'sertraline', label:'Sertraline'},
+      {id:'budep', label:'Budep'},
+      {id:'concerta', label:'Concerta'}
+    ],
+    subRule:'all', // all three required
+    noEffort:true  // no effort rating on meds
+  },
+  {
     id:'breath', icon:'🫁', cls:'breath', title:'Breathwork',
     sub:'Wim Hof method · 3 rounds',
     type:'breath'
@@ -436,7 +452,7 @@ function renderChecklist(){
     card.innerHTML = `
       <div class="card-head">
         <div class="tick ${done?'on':''}" id="tick-${t.id}" onclick="event.stopPropagation();toggleMain('${t.id}')">✓</div>
-        <div class="ci ${t.cls}">${t.icon}</div>
+        <div class="ci ${t.cls}">${t.iconSvg || t.icon}</div>
         <div class="ctitle">
           <div class="t">${t.title}</div>
           <div class="s" id="sub-${t.id}">${subText}</div>
@@ -481,15 +497,17 @@ function buildBody(t,d){
     else html += `<div class="note">These are a guide — the journal still counts if you miss one.</div>`;
   }
 
-  // effort selector (all tasks)
-  const elabel = t.effortLabel || 'How did it feel?';
-  html += `<div class="effort-lbl">${elabel}</div><div class="effort" id="effort-${t.id}">`;
-  EFFORTS.forEach(e=>{
-    const sel = (d.effort[t.id]===e.k)?'sel':'';
-    html += `<button data-e="${e.k}" class="${sel}" onclick="setEffort('${t.id}','${e.k}')">
-      <span class="em">${e.em}</span>${e.label}</button>`;
-  });
-  html += '</div>';
+  // effort selector (all tasks except those flagged noEffort)
+  if(!t.noEffort){
+    const elabel = t.effortLabel || 'How did it feel?';
+    html += `<div class="effort-lbl">${elabel}</div><div class="effort" id="effort-${t.id}">`;
+    EFFORTS.forEach(e=>{
+      const sel = (d.effort[t.id]===e.k)?'sel':'';
+      html += `<button data-e="${e.k}" class="${sel}" onclick="setEffort('${t.id}','${e.k}')">
+        <span class="em">${e.em}</span>${e.label}</button>`;
+    });
+    html += '</div>';
+  }
   return html;
 }
 
@@ -638,7 +656,7 @@ function renderStreakChips(){
   const items=[
     {label:'Overall', n:overallStreak(), flame:'🔥', cls:''},
     {label:'Perfect days', n:perfectStreak(), flame:'⭐', cls:'perfect'},
-    ...TASKS.map(t=>({label:t.title, n:taskStreak(t.id), flame:t.icon, cls:''}))
+    ...TASKS.map(t=>({label:t.title, n:taskStreak(t.id), flame:t.iconSvg||t.icon, cls:''}))
   ];
   wrap.innerHTML = items.map(it=>`
     <div class="chip ${it.cls} ${it.n===0?'dead':''}">
