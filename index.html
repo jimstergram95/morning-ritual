@@ -62,6 +62,7 @@ header{padding:22px 2px 14px}
 .tick.on{background:var(--good);border-color:var(--good);color:#0f1115}
 .ci{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px}
 .ci.breath{background:rgba(91,155,213,.16)}
+.ci.sleep{background:rgba(126,140,219,.16)}
 .ci.meds{background:rgba(219,140,170,.16)}
 .ci.med{background:rgba(155,140,219,.16)}
 .ci.elec{background:rgba(244,162,89,.16)}
@@ -84,6 +85,22 @@ header{padding:22px 2px 14px}
 .effort button[data-e="chilled"].sel{background:rgba(111,207,151,.16);border-color:var(--good);color:var(--good)}
 .effort button[data-e="steady"].sel{background:rgba(242,201,76,.14);border-color:var(--mid);color:var(--mid)}
 .effort button[data-e="grind"].sel{background:rgba(235,124,106,.16);border-color:var(--hard);color:var(--hard)}
+
+/* Sleep scale colours (green/yellow/red by easy/mid/hard) */
+.effort.sleepscale button.sel.easy{background:rgba(111,207,151,.16);border-color:var(--good);color:var(--good)}
+.effort.sleepscale button.sel.mid{background:rgba(242,201,76,.14);border-color:var(--mid);color:var(--mid)}
+.effort.sleepscale button.sel.hard{background:rgba(235,124,106,.16);border-color:var(--hard);color:var(--hard)}
+.effort.sleepscale{margin-bottom:14px}
+.effort.sleepscale button .em{font-size:16px}
+
+/* Time pickers */
+.timegrid{display:flex;gap:10px;margin-bottom:12px}
+.timefield{flex:1}
+.timefield label{display:block;font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.timefield input[type="time"]{width:100%;background:var(--surface2);border:1.5px solid var(--line);border-radius:var(--r3);padding:12px;color:var(--txt);font-size:17px;font-family:inherit;-webkit-appearance:none}
+.timefield input[type="time"]:focus{outline:none;border-color:var(--sleep,#7e8cdb)}
+.durband{background:rgba(126,140,219,.12);border:1px solid rgba(126,140,219,.25);border-radius:var(--r3);padding:11px 13px;font-size:13px;color:var(--txt);margin-bottom:14px;text-align:center}
+.durband b{color:#aeb6ec}
 
 /* Sub-checklist */
 .subs{margin-bottom:16px}
@@ -268,6 +285,50 @@ header{padding:22px 2px 14px}
       <div class="chart"><canvas id="retChart" height="130"></canvas></div>
     </div>
 
+    <div class="h2">Sleep & Wake</div>
+
+    <div class="statgrid" id="sleepStats"></div>
+
+    <div class="chartcard" id="bedCard" style="margin-top:12px">
+      <div class="ct">Time in bed</div>
+      <div class="cs">Lights-out to final wake, per day (hours)</div>
+      <div class="chart"><canvas id="bedChart" height="130"></canvas></div>
+    </div>
+
+    <div class="chartcard" id="startCard">
+      <div class="ct">Routine start time</div>
+      <div class="cs">When your morning got going — are you drifting later?</div>
+      <div class="chart"><canvas id="startChart" height="130"></canvas></div>
+    </div>
+
+    <div class="chartcard" id="wakeCompCard">
+      <div class="ct">Wake difficulty vs routine completion</div>
+      <div class="cs">Average % of the checklist done, by how hard waking was</div>
+      <div id="wakeCompBars"></div>
+    </div>
+
+    <div class="chartcard" id="qualWakeCard">
+      <div class="ct">Sleep quality vs wake difficulty</div>
+      <div class="cs">How waking felt, grouped by how well you slept</div>
+      <div id="qualWakeBars"></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--good)"></i>Bolted up</span>
+        <span><i class="dot" style="background:var(--mid)"></i>Groggy</span>
+        <span><i class="dot" style="background:var(--hard)"></i>Battled it</span>
+      </div>
+    </div>
+
+    <div class="chartcard" id="fallQualCard">
+      <div class="ct">Falling asleep vs staying asleep</div>
+      <div class="cs">Sleep quality grouped by how hard it was to drop off</div>
+      <div id="fallQualBars"></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--good)"></i>Slept through</span>
+        <span><i class="dot" style="background:var(--mid)"></i>Woke a bit</span>
+        <span><i class="dot" style="background:var(--hard)"></i>Kept waking</span>
+      </div>
+    </div>
+
     <div class="h2">Recent days</div>
     <div id="histList"></div>
 
@@ -298,6 +359,13 @@ const EFFORTS = [
   {k:'grind',   em:'😤', label:'Grind'}
 ];
 
+// Distinct 3-level scales for the sleep & wake tab
+const SLEEP_SCALES = {
+  wake:    [ {k:'easy',em:'⚡',label:'Bolted up'}, {k:'mid',em:'😴',label:'Groggy'}, {k:'hard',em:'🥱',label:'Battled it'} ],
+  fall:    [ {k:'easy',em:'💤',label:'Out cold'},  {k:'mid',em:'🛏️',label:'Took a while'}, {k:'hard',em:'🌙',label:'Tossed for ages'} ],
+  quality: [ {k:'easy',em:'😀',label:'Slept through'}, {k:'mid',em:'😐',label:'Woke a bit'}, {k:'hard',em:'😣',label:'Kept waking'} ]
+};
+
 const TASKS = [
   {
     id:'meds', icon:'💊', cls:'meds', title:'Medication',
@@ -311,6 +379,12 @@ const TASKS = [
     ],
     subRule:'all', // all three required
     noEffort:true  // no effort rating on meds
+  },
+  {
+    id:'sleep', icon:'🌙', cls:'sleep', title:'Sleep & Wake',
+    iconSvg:'<svg width="22" height="22" viewBox="-16 -16 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 6 -11 A 13 13 0 1 0 11 6 A 10 10 0 0 1 6 -11 Z" fill="none" stroke="#7e8cdb" stroke-width="3" stroke-linejoin="round"/></svg>',
+    sub:'Last night & this morning',
+    type:'sleep', noEffort:true
   },
   {
     id:'breath', icon:'🫁', cls:'breath', title:'Breathwork',
@@ -369,16 +443,23 @@ function todayStr(){
 }
 function today(){
   const t = todayStr();
-  if(!DB.days[t]) DB.days[t] = { tasks:{}, effort:{}, subs:{}, minutes:0, retention:[] };
+  if(!DB.days[t]) DB.days[t] = { tasks:{}, effort:{}, subs:{}, minutes:0, retention:[], sleep:{} };
   const d = DB.days[t];
   d.tasks=d.tasks||{}; d.effort=d.effort||{}; d.subs=d.subs||{}; d.retention=d.retention||[]; if(d.minutes==null)d.minutes=0;
+  d.sleep=d.sleep||{};
   return d;
 }
 
 /* ====================== TASK COMPLETION LOGIC ====================== */
+function sleepDone(sleepData){
+  if(!sleepData) return false;
+  return !!sleepData.lightsOut && !!sleepData.wakeTime &&
+         !!sleepData.wake && !!sleepData.fall && !!sleepData.quality;
+}
 function isTaskDone(taskId){
   const d = today();
   const t = TASKS.find(x=>x.id===taskId);
+  if(t.type==='sleep'){ return sleepDone(d.sleep); }
   if(t.type==='subs'){
     const s = d.subs[taskId]||{};
     const ticked = t.subs.filter(x=>s[x.id]).length;
@@ -404,6 +485,7 @@ function dayDoneAny(day){
 function dayTaskDone(day, taskId){
   if(!day) return false;
   const t = TASKS.find(x=>x.id===taskId);
+  if(t.type==='sleep'){ return sleepDone(day.sleep); }
   if(t.type==='subs'){
     const s=(day.subs&&day.subs[taskId])||{};
     const ticked=t.subs.filter(x=>s[x.id]).length;
@@ -448,10 +530,12 @@ function renderChecklist(){
     card.id = 'card-'+t.id;
 
     let subText = t.sub;
+    const tickDriven = (t.type==='sleep' || t.type==='subs'); // completion comes from fields, not the tick
+    const tickAttr = tickDriven ? '' : `onclick="event.stopPropagation();toggleMain('${t.id}')"`;
 
     card.innerHTML = `
       <div class="card-head">
-        <div class="tick ${done?'on':''}" id="tick-${t.id}" onclick="event.stopPropagation();toggleMain('${t.id}')">✓</div>
+        <div class="tick ${done?'on':''}${tickDriven?' auto':''}" id="tick-${t.id}" ${tickAttr}>✓</div>
         <div class="ci ${t.cls}">${t.iconSvg || t.icon}</div>
         <div class="ctitle">
           <div class="t">${t.title}</div>
@@ -478,6 +562,9 @@ function buildBody(t,d){
   }
   if(t.type==='minutes'){
     html += minutesStepper(d);
+  }
+  if(t.type==='sleep'){
+    html += sleepBody(d);
   }
   if(t.type==='subs'){
     html += '<div class="subs">';
@@ -549,6 +636,61 @@ function minutesStepper(d){
   <div class="note">Tick the circle above once you've done your Headspace session.</div>`;
 }
 
+function sleepScale(d, field, scale, label){
+  let html=`<div class="effort-lbl">${label}</div><div class="effort sleepscale" id="sleep-${field}">`;
+  scale.forEach(e=>{
+    const sel = (d.sleep[field]===e.k)?('sel '+e.k):'';
+    html += `<button data-e="${e.k}" class="${sel}" onclick="setSleep('${field}','${e.k}')">
+      <span class="em">${e.em}</span>${e.label}</button>`;
+  });
+  return html+'</div>';
+}
+function sleepBody(d){
+  const lo=d.sleep.lightsOut||'';
+  const wk=d.sleep.wakeTime||'';
+  const dur=sleepDuration(d.sleep);
+  return `
+  <div class="note">Bedtime is for <b>last night</b> — just estimate it this morning. Final wake is when you're up for good (after the 5am pill wake).</div>
+  <div class="timegrid">
+    <div class="timefield">
+      <label>Lights out (last night)</label>
+      <input type="time" value="${lo}" onchange="setSleepTime('lightsOut',this.value)">
+    </div>
+    <div class="timefield">
+      <label>Final wake / start</label>
+      <input type="time" value="${wk}" onchange="setSleepTime('wakeTime',this.value)">
+    </div>
+  </div>
+  <div class="durband" id="durband">${dur!=null?`🛏️ Time in bed: <b>${fmtDur(dur)}</b>`:'Set both times to see time in bed'}</div>
+
+  <div class="mins" style="margin-top:4px">
+    <span class="ml">Times you snoozed</span>
+    <div class="mc">
+      <button class="stepb" onclick="changeSnooze(-1)">−</button>
+      <div class="mval"><span id="snoozeval">${d.sleep.snooze||0}</span></div>
+      <button class="stepb" onclick="changeSnooze(1)">+</button>
+    </div>
+  </div>
+
+  ${sleepScale(d,'wake',SLEEP_SCALES.wake,'How hard was waking?')}
+  ${sleepScale(d,'fall',SLEEP_SCALES.fall,'How hard was falling asleep?')}
+  ${sleepScale(d,'quality',SLEEP_SCALES.quality,'Did you stay asleep?')}
+  `;
+}
+// minutes between two HH:MM, treating lights-out as previous evening if it's later clock-time than wake
+function sleepDuration(s){
+  if(!s||!s.lightsOut||!s.wakeTime) return null;
+  const [lh,lm]=s.lightsOut.split(':').map(Number);
+  const [wh,wm]=s.wakeTime.split(':').map(Number);
+  let mins=(wh*60+wm)-(lh*60+lm);
+  if(mins<=0) mins+=24*60; // crossed midnight
+  return mins;
+}
+function fmtDur(mins){
+  const h=Math.floor(mins/60), m=mins%60;
+  return m? `${h}h ${m}m` : `${h}h`;
+}
+
 /* ====================== INTERACTIONS ====================== */
 let openCard = null;
 function toggleCard(id){
@@ -613,6 +755,34 @@ function setRetention(i,val){
   d.retention[i] = isNaN(n)?null:n;
   save();
 }
+function setSleepTime(field,val){
+  const d=today();
+  d.sleep[field]=val||null;
+  save();
+  // update the duration band live
+  const band=document.getElementById('durband');
+  const dur=sleepDuration(d.sleep);
+  if(band) band.innerHTML = dur!=null? `🛏️ Time in bed: <b>${fmtDur(dur)}</b>` : 'Set both times to see time in bed';
+  refreshSub('sleep'); updateHeader(); reflow('sleep');
+}
+function setSleep(field,k){
+  const d=today();
+  d.sleep[field] = (d.sleep[field]===k)?null:k;
+  save();
+  const wrap=document.getElementById('sleep-'+field);
+  if(wrap) [...wrap.children].forEach(b=>{
+    const on = b.dataset.e===d.sleep[field];
+    b.classList.remove('sel','easy','mid','hard');
+    if(on){ b.classList.add('sel', b.dataset.e); }
+  });
+  refreshSub('sleep'); updateHeader();
+}
+function changeSnooze(delta){
+  const d=today();
+  d.sleep.snooze=Math.max(0,(d.sleep.snooze||0)+delta);
+  document.getElementById('snoozeval').textContent=d.sleep.snooze;
+  save();
+}
 
 function refreshSub(id){
   const t=TASKS.find(x=>x.id===id);
@@ -630,6 +800,9 @@ function refreshSub(id){
       subEl.textContent=`${n}/${t.subs.length} ticked`;
     }else if(t.type==='minutes'){
       subEl.textContent = d.minutes>0?`${d.minutes} min logged`:t.sub;
+    }else if(t.type==='sleep'){
+      const dur=sleepDuration(d.sleep);
+      subEl.textContent = dur!=null? `${fmtDur(dur)} in bed` : t.sub;
     }else{
       subEl.textContent=t.sub;
     }
@@ -722,6 +895,7 @@ function renderStats(){
   drawEffortBars();
   drawMedChart(range);
   drawRetChart(range);
+  drawSleepStats(range);
   renderHistList();
 }
 function statBox(v,l,cls){
@@ -772,6 +946,136 @@ function drawRetChart(range){
     const max=niceMax(Math.max(30,...data.map(d=>d.val)));
     barChart(document.getElementById('retChart'), data, {max, suffix:'s', color:'#5b9bd5'});
   }
+}
+
+/* ---- Sleep & Wake stats ---- */
+function timeToMin(hhmm){ if(!hhmm) return null; const [h,m]=hhmm.split(':').map(Number); return h*60+m; }
+
+function drawSleepStats(range){
+  const withSleep = range.filter(r=>r.day && r.day.sleep && (r.day.sleep.lightsOut||r.day.sleep.wake));
+  const hasAny = withSleep.length>0;
+  // toggle all sleep cards
+  ['bedCard','startCard','wakeCompCard','qualWakeCard','fallQualCard'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.style.display = hasAny?'block':'none';
+  });
+
+  // summary stats
+  const durs = withSleep.map(r=>sleepDuration(r.day.sleep)).filter(x=>x!=null);
+  const avgDur = durs.length? Math.round(durs.reduce((a,b)=>a+b,0)/durs.length):0;
+  const snoozes = withSleep.map(r=>r.day.sleep.snooze||0);
+  const avgSnooze = snoozes.length? (snoozes.reduce((a,b)=>a+b,0)/snoozes.length):0;
+  const goodNights = withSleep.filter(r=>r.day.sleep.quality==='easy').length;
+  const goodWakes = withSleep.filter(r=>r.day.sleep.wake==='easy').length;
+  document.getElementById('sleepStats').innerHTML=`
+    ${statBox(avgDur? fmtDur(avgDur):'—','Avg time in bed','accent')}
+    ${statBox(avgSnooze? avgSnooze.toFixed(1):'0','Avg snoozes','')}
+    ${statBox(goodNights,'Slept-through nights','good')}
+    ${statBox(goodWakes,'Easy wake-ups','good')}
+  `;
+
+  // time in bed (hours) line
+  const bedData=range.map(r=>{
+    const dur = r.day&&r.day.sleep? sleepDuration(r.day.sleep):null;
+    return {label:r.ds, val: dur!=null? +(dur/60).toFixed(2):0};
+  });
+  const bedMax=niceMax(Math.max(8,...bedData.map(d=>d.val)));
+  barChart(document.getElementById('bedChart'), bedData, {max:bedMax, suffix:'h', color:'#7e8cdb'});
+
+  // routine start time line (minutes since midnight -> shown as clock)
+  const startData=range.map(r=>{
+    const t = r.day&&r.day.sleep? timeToMin(r.day.sleep.wakeTime):null;
+    return {label:r.ds, val: t!=null? t:null};
+  });
+  startTimeChart(document.getElementById('startChart'), startData);
+
+  // correlation 1: wake difficulty -> avg completion %
+  const wakeGroups={easy:[],mid:[],hard:[]};
+  withSleep.forEach(r=>{ const w=r.day.sleep.wake; if(w&&wakeGroups[w]) wakeGroups[w].push(dayPct(r.day)); });
+  const wakeLabels={easy:'Bolted up',mid:'Groggy',hard:'Battled it'};
+  let html1='';
+  ['easy','mid','hard'].forEach(k=>{
+    const arr=wakeGroups[k];
+    const avg=arr.length? Math.round(arr.reduce((a,b)=>a+b,0)/arr.length):0;
+    const col=k==='easy'?'var(--good)':k==='mid'?'var(--mid)':'var(--hard)';
+    html1+=`<div class="barrow">
+      <span class="bl">${wakeLabels[k]}</span>
+      <div class="bartrack"><div class="barseg" style="width:${avg}%;background:${col}"></div></div>
+      <span class="bn">${arr.length?avg+'%':'—'}</span>
+    </div>`;
+  });
+  document.getElementById('wakeCompBars').innerHTML=html1;
+
+  // correlation 2: sleep quality -> wake difficulty mix
+  document.getElementById('qualWakeBars').innerHTML =
+    groupMix(withSleep, 'quality', 'wake', {easy:'Slept through',mid:'Woke a bit',hard:'Kept waking'});
+
+  // correlation 3: fall-asleep difficulty -> sleep quality mix
+  document.getElementById('fallQualBars').innerHTML =
+    groupMix(withSleep, 'fall', 'quality', {easy:'Out cold',mid:'Took a while',hard:'Tossed'});
+}
+
+// build stacked-mix rows: group rows by groupField, colour segments by valueField (easy/mid/hard)
+function groupMix(rows, groupField, valueField, groupLabels){
+  let html='';
+  ['easy','mid','hard'].forEach(gk=>{
+    const inGroup=rows.filter(r=>r.day.sleep[groupField]===gk);
+    const counts={easy:0,mid:0,hard:0};
+    inGroup.forEach(r=>{ const v=r.day.sleep[valueField]; if(v&&counts[v]!=null) counts[v]++; });
+    const total=counts.easy+counts.mid+counts.hard;
+    let segs='';
+    if(total){
+      segs=`<div class="barseg" style="width:${counts.easy/total*100}%;background:var(--good)"></div>
+            <div class="barseg" style="width:${counts.mid/total*100}%;background:var(--mid)"></div>
+            <div class="barseg" style="width:${counts.hard/total*100}%;background:var(--hard)"></div>`;
+    }
+    html+=`<div class="barrow">
+      <span class="bl">${groupLabels[gk]}</span>
+      <div class="bartrack">${segs}</div>
+      <span class="bn">${total||'—'}</span>
+    </div>`;
+  });
+  return html;
+}
+
+// line chart specialised for clock times (y axis shows HH:MM)
+function startTimeChart(cv,data){
+  const {ctx,w,h}=setupCanvas(cv);
+  ctx.clearRect(0,0,w,h);
+  const vals=data.map(d=>d.val).filter(v=>v!=null);
+  if(!vals.length){ return; }
+  let lo=Math.min(...vals), hi=Math.max(...vals);
+  // pad the range by 30 min each side, round to half hours
+  lo=Math.floor((lo-30)/30)*30; hi=Math.ceil((hi+30)/30)*30;
+  if(hi-lo<60){ hi=lo+60; }
+  const pad={l:42,r:10,t:14,b:22};
+  const cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  const fmtClock=m=>{ const hh=Math.floor(m/60)%24, mm=m%60; return String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0'); };
+  ctx.lineWidth=1; ctx.font='10px -apple-system,sans-serif';
+  [0,.5,1].forEach(f=>{
+    const yy=pad.t+ch*(1-f); const val=lo+(hi-lo)*f;
+    ctx.strokeStyle='#2c313c'; ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();
+    ctx.fillStyle='#6b7382'; ctx.textAlign='right'; ctx.textBaseline='middle';
+    ctx.fillText(fmtClock(Math.round(val)), pad.l-6, yy);
+  });
+  ctx.textBaseline='alphabetic';
+  const n=data.length;
+  const x=i=> n===1?pad.l+cw/2: pad.l+(cw*i/(n-1));
+  const y=v=> pad.t+ch*(1-(v-lo)/(hi-lo));
+  // draw line only across points that exist; gaps where null
+  ctx.strokeStyle='#7e8cdb'; ctx.lineWidth=2.5; ctx.lineJoin='round';
+  let started=false;
+  ctx.beginPath();
+  data.forEach((d,i)=>{
+    if(d.val==null){ started=false; return; }
+    const px=x(i),py=y(d.val);
+    if(!started){ ctx.moveTo(px,py); started=true; } else ctx.lineTo(px,py);
+  });
+  ctx.stroke();
+  data.forEach((d,i)=>{ if(d.val==null) return; ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.fillStyle='#7e8cdb';ctx.fill();
+    ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.strokeStyle='#181b22';ctx.lineWidth=1.5;ctx.stroke(); });
+  ctx.fillStyle='#6b7382'; ctx.font='10px -apple-system,sans-serif'; ctx.textAlign='center';
+  const step=Math.ceil(n/6);
+  data.forEach((d,i)=>{ if(i%step===0||i===n-1){ ctx.fillText(shortDate(d.label),x(i),h-7); } });
 }
 
 function setupCanvas(cv){
@@ -985,18 +1289,40 @@ function loadDemo(){
     const ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
     // ~12% of days fully skipped to test streak breaks
     if(Math.random()<0.12 && i!==0){ continue; }
-    const day={tasks:{},effort:{},subs:{},minutes:0,retention:[]};
+    const day={tasks:{},effort:{},subs:{},minutes:0,retention:[],sleep:{}};
     // each task done with ~80% probability
     TASKS.forEach(t=>{
+      if(t.type==='sleep') return; // handled below
       const doIt=Math.random()<0.8;
       if(t.type==='subs'){
         day.subs[t.id]={};
         if(doIt){ t.subs.forEach(sb=>{ if(Math.random()<0.9) day.subs[t.id][sb.id]=true; }); }
       } else if(doIt){ day.tasks[t.id]=true; }
-      if(doIt) day.effort[t.id]=pick(efforts);
+      if(doIt && !t.noEffort) day.effort[t.id]=pick(efforts);
     });
     if(day.tasks.med || Math.random()<0.7){ day.minutes=[5,10,10,15,15,20][Math.floor(Math.random()*6)]; }
     if(day.tasks.breath){ day.retention=[60+Math.floor(Math.random()*60),75+Math.floor(Math.random()*70),80+Math.floor(Math.random()*80)]; }
+    // sleep & wake — with a mild built-in correlation (rough night -> harder wake)
+    if(Math.random()<0.85){
+      const lvl=['easy','mid','hard'];
+      const qIdx=Math.floor(Math.random()*3);
+      const quality=lvl[qIdx];
+      // wake difficulty leans toward sleep quality, with some noise
+      let wIdx=qIdx + (Math.random()<0.4 ? (Math.random()<0.5?-1:1) : 0);
+      wIdx=Math.max(0,Math.min(2,wIdx));
+      const fall=lvl[Math.floor(Math.random()*3)];
+      // lights out 21:30–00:30, final wake 06:30–08:00
+      const loH=[21,22,22,23,23,0][Math.floor(Math.random()*6)];
+      const loM=[0,15,30,45][Math.floor(Math.random()*4)];
+      const wkH=[6,6,7,7,7,8][Math.floor(Math.random()*6)];
+      const wkM=[0,15,30,45][Math.floor(Math.random()*4)];
+      day.sleep={
+        lightsOut:String(loH).padStart(2,'0')+':'+String(loM).padStart(2,'0'),
+        wakeTime:String(wkH).padStart(2,'0')+':'+String(wkM).padStart(2,'0'),
+        wake:lvl[wIdx], fall, quality,
+        snooze: wIdx===2 ? 1+Math.floor(Math.random()*4) : Math.floor(Math.random()*2)
+      };
+    }
     days[ds]=day;
   }
   DB={days}; save(); openCard=null; renderChecklist();
