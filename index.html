@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Evening">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="theme-color" content="#14121f">
+<title>Evening Reflection</title>
+<style>
+:root{
+  --bg:#14121f; --surface:#1d1a2e; --surface2:#252136; --surface3:#2e2942;
+  --line:#332e48; --line2:#433c5c;
+  --txt:#efeef6; --txt2:#a5a0b8; --txt3:#736d87;
+  --accent:#e87a5a; --accent2:#c85d7a;
+  --l5:#6fcf97; --l4:#a6d96a; --l3:#f2c94c; --l2:#f0a35e; --l1:#eb7c6a;
+  --good:#6fcf97; --mid:#f2c94c; --hard:#eb7c6a;
+  --purple:#9b8cdb; --blue:#6f9bd5;
+  --r:16px; --r2:12px; --r3:10px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:env(safe-area-inset-top) 0 0 0;overflow-x:hidden}
+.app{max-width:560px;margin:0 auto;padding:0 18px 120px}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.hidden{display:none!important}
+
+header{padding:22px 2px 14px}
+.date-row{display:flex;justify-content:space-between;align-items:flex-end}
+.greet{font-size:26px;font-weight:700;letter-spacing:-.5px;line-height:1.1}
+.date-sub{font-size:13px;color:var(--txt2);margin-top:4px}
+.ring-wrap{display:flex;flex-direction:column;align-items:center}
+.ring-pct{font-size:15px;font-weight:700;margin-top:-2px}
+.ring-lbl{font-size:9px;color:var(--txt3);text-transform:uppercase;letter-spacing:.8px;margin-top:1px}
+
+.streaks{display:flex;gap:8px;margin:16px 0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.streaks::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r3);padding:8px 11px;display:flex;align-items:center;gap:7px;min-width:max-content}
+.chip .flame{font-size:15px;display:inline-flex;align-items:center}
+.chip .flame svg{width:15px;height:15px;display:block}
+.chip .n{font-size:15px;font-weight:700}
+.chip .cl{font-size:10px;color:var(--txt3);text-transform:uppercase;letter-spacing:.5px}
+.chip.dead{opacity:.45}
+
+.tabnav{position:fixed;bottom:0;left:0;right:0;background:rgba(20,18,31,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;padding:8px 8px calc(8px + env(safe-area-inset-bottom));z-index:50}
+.tabnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:5px 0;color:var(--txt3);font-size:10px;font-weight:600}
+.tabnav button.active{color:var(--accent)}
+.tabnav .ic{font-size:21px;line-height:1}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.card.done{border-color:rgba(111,207,151,.35)}
+.card-head{display:flex;align-items:center;gap:13px;padding:16px 15px}
+.tick{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:2px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:16px;color:transparent;transition:all .18s}
+.tick.on{background:var(--good);border-color:var(--good);color:#14121f}
+.ci{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px}
+.ci svg{display:block}
+.ci.energy{background:rgba(232,122,90,.16)}
+.ci.meds{background:rgba(219,140,170,.16)}
+.ci.work{background:rgba(111,155,213,.16)}
+.ci.mind{background:rgba(155,140,219,.16)}
+.ci.move{background:rgba(166,217,106,.16)}
+.ci.body{background:rgba(200,93,122,.16)}
+.ctitle{flex:1;min-width:0}
+.ctitle .t{font-size:16px;font-weight:600;letter-spacing:-.2px}
+.ctitle .s{font-size:12px;color:var(--txt2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{flex:0 0 auto;color:var(--txt3);font-size:13px;transition:transform .2s;padding:6px}
+.card.open .chev{transform:rotate(90deg)}
+.card-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.card-inner{padding:2px 15px 16px}
+.divider{height:1px;background:var(--line);margin:0 0 14px}
+
+.rate-lbl{font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;margin-top:4px}
+.rate{display:flex;gap:6px;margin-bottom:14px}
+.rate button{flex:1;padding:10px 4px;border-radius:var(--r3);background:var(--surface2);border:1.5px solid var(--line);font-size:11px;font-weight:600;color:var(--txt2);transition:all .15s}
+.rate button .em{display:block;font-size:17px;margin-bottom:3px}
+/* 3-level colours */
+.rate.lv3 button[data-v="1"].sel{background:rgba(111,207,151,.16);border-color:var(--good);color:var(--good)}
+.rate.lv3 button[data-v="2"].sel{background:rgba(242,201,76,.14);border-color:var(--mid);color:var(--mid)}
+.rate.lv3 button[data-v="3"].sel{background:rgba(235,124,106,.16);border-color:var(--hard);color:var(--hard)}
+/* 5-level colours */
+.rate.lv5 button[data-v="1"].sel{background:rgba(111,207,151,.16);border-color:var(--l5);color:var(--l5)}
+.rate.lv5 button[data-v="2"].sel{background:rgba(166,217,106,.16);border-color:var(--l4);color:var(--l4)}
+.rate.lv5 button[data-v="3"].sel{background:rgba(242,201,76,.14);border-color:var(--l3);color:var(--l3)}
+.rate.lv5 button[data-v="4"].sel{background:rgba(240,163,94,.16);border-color:var(--l2);color:var(--l2)}
+.rate.lv5 button[data-v="5"].sel{background:rgba(235,124,106,.16);border-color:var(--l1);color:var(--l1)}
+
+.subhead{font-size:13px;font-weight:600;color:var(--txt);margin:6px 0 10px}
+
+.tick-row{display:flex;align-items:center;gap:11px;padding:12px 13px;background:var(--surface2);border-radius:var(--r3);margin-bottom:12px;border:1px solid transparent;transition:all .15s}
+.tick-row.on{border-color:rgba(111,207,151,.3)}
+.tick-row .stick{flex:0 0 auto;width:24px;height:24px;border-radius:7px;border:2px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:13px;color:transparent;transition:all .15s}
+.tick-row.on .stick{background:var(--good);border-color:var(--good);color:#14121f}
+.tick-row .tlbl{flex:1;font-size:14px;font-weight:500}
+
+.stepper{display:flex;align-items:center;gap:12px;margin-bottom:12px;background:var(--surface2);border-radius:var(--r3);padding:12px 14px}
+.stepper .ml{flex:1;font-size:14px;font-weight:500}
+.stepper .mc{display:flex;align-items:center;gap:12px}
+.stepb{width:32px;height:32px;border-radius:9px;background:var(--surface3);font-size:19px;font-weight:600;color:var(--txt);display:flex;align-items:center;justify-content:center}
+.stepb:active{background:var(--line2)}
+.mval{font-size:19px;font-weight:700;min-width:48px;text-align:center}
+.mval span{font-size:12px;color:var(--txt3);font-weight:500}
+
+.timegrid{display:flex;gap:10px;margin-bottom:12px}
+.timefield{flex:1}
+.timefield label{display:block;font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.timefield input[type="time"]{width:100%;background:var(--surface2);border:1.5px solid var(--line);border-radius:var(--r3);padding:12px;color:var(--txt);font-size:17px;font-family:inherit;-webkit-appearance:none}
+.timefield input[type="time"]:focus{outline:none;border-color:var(--accent)}
+.workband{background:rgba(111,155,213,.12);border:1px solid rgba(111,155,213,.25);border-radius:var(--r3);padding:11px 13px;font-size:13px;color:var(--txt);margin-bottom:14px;text-align:center}
+.workband b{color:#9cc0ec}
+
+.goalgrid{display:flex;gap:10px;margin-bottom:12px}
+.goalfield{flex:1;background:var(--surface2);border-radius:var(--r3);padding:12px 14px}
+.goalfield label{display:block;font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
+.goalfield .mc{display:flex;align-items:center;justify-content:space-between;gap:8px}
+
+.note{font-size:12px;line-height:1.5;color:var(--txt2);background:var(--surface2);border-radius:var(--r3);padding:11px 13px;margin-bottom:14px}
+.note b{color:var(--txt)}
+
+.hrs-input{display:flex;align-items:center;gap:10px;background:var(--surface2);border-radius:var(--r3);padding:8px 14px;margin-bottom:12px}
+.hrs-input .ml{flex:1;font-size:14px;font-weight:500}
+.hrs-input input{width:72px;background:var(--surface3);border:1.5px solid var(--line);border-radius:8px;padding:9px;color:var(--txt);font-size:16px;font-family:inherit;text-align:center;-webkit-appearance:none}
+.hrs-input input:focus{outline:none;border-color:var(--accent)}
+.hrs-input .ru{font-size:13px;color:var(--txt3)}
+
+/* Stats */
+.h2{font-size:13px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.8px;margin:24px 2px 12px}
+.h2:first-child{margin-top:8px}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r2);padding:15px 14px}
+.stat .sv{font-size:26px;font-weight:700;letter-spacing:-1px}
+.stat .sl{font-size:11px;color:var(--txt2);margin-top:3px;font-weight:500}
+.stat .sv.accent{color:var(--accent)}
+.stat .sv.good{color:var(--good)}
+
+.range-tabs{display:flex;gap:7px;margin:0 0 14px}
+.range-tabs button{flex:1;padding:8px;border-radius:9px;background:var(--surface);border:1px solid var(--line);font-size:12px;font-weight:600;color:var(--txt2)}
+.range-tabs button.active{background:var(--surface3);border-color:var(--line2);color:var(--txt)}
+
+.chartcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 14px 10px;margin-bottom:12px}
+.chartcard .ct{font-size:14px;font-weight:600;margin-bottom:2px}
+.chartcard .cs{font-size:11px;color:var(--txt3);margin-bottom:14px}
+.chart{position:relative;width:100%}
+
+.legend{display:flex;gap:14px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.legend span{font-size:11px;color:var(--txt2);display:flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:50%}
+
+.barrow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.barrow .bl{font-size:12px;color:var(--txt2);width:90px;flex:0 0 auto}
+.bartrack{flex:1;height:9px;background:var(--surface3);border-radius:5px;overflow:hidden;display:flex}
+.barseg{height:100%}
+.barrow .bn{font-size:12px;font-weight:600;width:36px;text-align:right;flex:0 0 auto}
+
+.empty{text-align:center;color:var(--txt3);font-size:13px;padding:30px 20px;line-height:1.6}
+
+.histrow{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r2);margin-bottom:8px}
+.histrow .hd{font-size:13px;font-weight:600;width:58px;flex:0 0 auto}
+.histrow .hbar{flex:1;height:7px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.histrow .hbar i{display:block;height:100%;border-radius:4px}
+.histrow .hp{font-size:13px;font-weight:700;width:42px;text-align:right;flex:0 0 auto}
+
+.actions{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+.btn{padding:13px;border-radius:var(--r2);font-size:14px;font-weight:600;text-align:center;border:1px solid var(--line2);background:var(--surface)}
+.btn.ghost{color:var(--txt2)}
+.btn.danger{color:var(--hard);border-color:rgba(235,124,106,.3)}
+.foot-note{font-size:11px;color:var(--txt3);text-align:center;line-height:1.6;margin-top:14px;padding:0 10px}
+
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--surface3);border:1px solid var(--line2);color:var(--txt);padding:11px 18px;border-radius:24px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;z-index:100;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}
+.pop{animation:pop .3s ease}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ CHECKLIST PAGE ============ -->
+  <div id="page-list">
+    <header>
+      <div class="date-row">
+        <div>
+          <div class="greet" id="greet">Good evening</div>
+          <div class="date-sub" id="dateSub">—</div>
+        </div>
+        <div class="ring-wrap">
+          <svg width="62" height="62" viewBox="0 0 62 62">
+            <circle cx="31" cy="31" r="26" fill="none" stroke="#2e2942" stroke-width="6"/>
+            <circle id="ring" cx="31" cy="31" r="26" fill="none" stroke="#e87a5a" stroke-width="6"
+              stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="163.4"
+              transform="rotate(-90 31 31)" style="transition:stroke-dashoffset .5s"/>
+          </svg>
+          <div class="ring-pct" id="ringPct" style="margin-top:-42px">0%</div>
+          <div class="ring-lbl" style="margin-top:24px">Logged</div>
+        </div>
+      </div>
+      <div class="streaks" id="streaks"></div>
+    </header>
+
+    <div id="checklist"></div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="exportData()">↓ Back up my history</button>
+      <button class="btn ghost" onclick="document.getElementById('importFile').click()">↑ Restore from backup</button>
+      <input type="file" id="importFile" accept=".json" class="hidden" onchange="importData(event)">
+      <button class="btn ghost" style="opacity:.5;font-size:12px" onclick="loadDemo()">⚙︎ Load 90 days of test data</button>
+    </div>
+    <div class="foot-note">
+      Saved on this phone, works offline. Resets each day at midnight.<br>
+      No day has to be "complete" to be worth logging — even a couple of taps helps you see the pattern. Back up now and then.
+    </div>
+  </div>
+
+  <!-- ============ STATS PAGE ============ -->
+  <div id="page-stats" class="hidden">
+    <header>
+      <div class="greet" style="font-size:24px">Patterns</div>
+      <div class="date-sub">Your energy, mood & work over time</div>
+    </header>
+
+    <div class="range-tabs" id="rangeTabs">
+      <button data-r="7" class="active">7 days</button>
+      <button data-r="30">30 days</button>
+      <button data-r="90">90 days</button>
+      <button data-r="9999">All time</button>
+    </div>
+
+    <div class="h2">At a glance</div>
+    <div class="statgrid" id="glanceStats"></div>
+
+    <div class="chartcard">
+      <div class="ct">Your average day's energy</div>
+      <div class="cs">Where the slump tends to hit (5 = high, 1 = drained)</div>
+      <div class="chart"><canvas id="energyCurve" height="150"></canvas></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Mood over time</div>
+      <div class="cs">Daily mood (5 = great, 1 = rough)</div>
+      <div class="chart"><canvas id="moodChart" height="140"></canvas></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Energy over time</div>
+      <div class="cs">Daily average energy across the four points</div>
+      <div class="chart"><canvas id="energyChart" height="140"></canvas></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">True hours worked</div>
+      <div class="cs">Your honest focused hours, per day</div>
+      <div class="chart"><canvas id="hoursChart" height="140"></canvas></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Steps</div>
+      <div class="cs">Daily step count</div>
+      <div class="chart"><canvas id="stepsChart" height="140"></canvas></div>
+    </div>
+
+    <div class="h2">What connects to what</div>
+
+    <div class="chartcard">
+      <div class="ct">Coffee vs concentration</div>
+      <div class="cs">Average concentration by how many coffees you had</div>
+      <div id="coffeeConcBars"></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Coffee vs energy</div>
+      <div class="cs">Average energy by how many coffees you had</div>
+      <div id="coffeeEnergyBars"></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Gym days vs mood</div>
+      <div class="cs">Average mood on days you went vs didn't</div>
+      <div id="gymMoodBars"></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Mood vs productivity</div>
+      <div class="cs">Average productivity by mood level</div>
+      <div id="moodProdBars"></div>
+    </div>
+
+    <div class="h2">Recent days</div>
+    <div id="histList"></div>
+
+    <div class="actions">
+      <button class="btn danger" onclick="resetAll()">Erase all history</button>
+    </div>
+    <div class="foot-note">Erasing is permanent and can't be undone. Back up first from the log tab.</div>
+  </div>
+
+  <nav class="tabnav">
+    <button id="nav-list" class="active" onclick="showPage('list')">
+      <span class="ic">◐</span><span>Today's log</span>
+    </button>
+    <button id="nav-stats" onclick="showPage('stats')">
+      <span class="ic">▦</span><span>Patterns</span>
+    </button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+/* ====================== CONFIG ====================== */
+// 5-level scales
+const MOOD = [
+  {v:1,em:'😀',label:'Great'}, {v:2,em:'🙂',label:'Good'}, {v:3,em:'😐',label:'Okay'},
+  {v:4,em:'😔',label:'Low'}, {v:5,em:'😞',label:'Rough'}
+];
+const ENERGY = [
+  {v:1,em:'⚡',label:'High'}, {v:2,em:'🙂',label:'Good'}, {v:3,em:'😐',label:'Okay'},
+  {v:4,em:'😕',label:'Flat'}, {v:5,em:'🪫',label:'Drained'}
+];
+// 3-level scale (1 best .. 3 hardest/worst)
+const L3 = [ {v:1,em:'😌',label:'Good'}, {v:2,em:'😐',label:'Okay'}, {v:3,em:'😣',label:'Tough'} ];
+const L3_EFFORT = [ {v:1,em:'😌',label:'Easy'}, {v:2,em:'😐',label:'A push'}, {v:3,em:'😤',label:'Hard'} ];
+
+// energy points across the day
+const ENERGY_POINTS = [
+  {id:'morning', label:'Morning'},
+  {id:'midday', label:'Midday'},
+  {id:'afternoon', label:'Afternoon'},
+  {id:'evening', label:'Evening'}
+];
+
+const TASKS = [
+  {
+    id:'meds', cls:'meds', title:'Medication',
+    iconSvg:'<svg width="22" height="22" viewBox="-16 -16 32 32" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-40)" fill="none" stroke="#db8caa" stroke-width="3"><rect x="-8" y="-13.5" width="16" height="27" rx="8"/><line x1="-8" y1="0" x2="8" y2="0"/></g></svg>',
+    sub:'Risperidone (Ashwagandha optional)',
+    type:'meds'
+  },
+  {
+    id:'energy', cls:'energy', title:'Energy through the day',
+    iconSvg:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e87a5a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,15 7,9 12,13 17,5 22,9"/></svg>',
+    sub:'4 points — spot the slump',
+    type:'energy'
+  },
+  {
+    id:'mind', cls:'mind', title:'Mind & mood',
+    iconSvg:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9b8cdb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14 Q12 17 16 14"/><circle cx="9" cy="9.5" r="1"/><circle cx="15" cy="9.5" r="1"/></svg>',
+    sub:'Mood, motivation, concentration, productivity',
+    type:'mind'
+  },
+  {
+    id:'work', cls:'work', title:'Work',
+    iconSvg:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6f9bd5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7 V5 a2 2 0 0 1 2-2 h4 a2 2 0 0 1 2 2 V7"/></svg>',
+    sub:'Hours, goals & coffees',
+    type:'work'
+  },
+  {
+    id:'move', cls:'move', title:'Movement',
+    iconSvg:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a6d96a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7 v6 M12 13 l-4 6 M12 13 l4 6 M6 9 l6 1 6-1"/></svg>',
+    sub:'Gym, walk & steps',
+    type:'move'
+  }
+];
+
+/* ====================== STORAGE ====================== */
+const LS_KEY = 'eveningReflection_v1';
+let DB = load();
+
+function load(){
+  try{ const r = localStorage.getItem(LS_KEY); if(r) return JSON.parse(r); }catch(e){}
+  return { days:{} };
+}
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(DB)); }catch(e){ toast('Could not save — storage full?'); } }
+
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function blankDay(){
+  return {
+    meds:{risperidone:false, ashwagandha:false},
+    energy:{},                // morning/midday/afternoon/evening -> 1..5
+    mind:{mood:null,motivation:null,concentration:null,productivity:null},
+    work:{start:null,end:null,trueHours:null,coffees:0,goalsDone:0,goalsTotal:0},
+    move:{
+      gymWent:false, gymEffort:null, gymPerf:null,
+      walkWent:false, walkEffort:null, walkPerf:null,
+      steps:0
+    }
+  };
+}
+function today(){
+  const t = todayStr();
+  if(!DB.days[t]) DB.days[t] = blankDay();
+  const d = DB.days[t];
+  // backfill any missing keys
+  const b = blankDay();
+  d.meds = Object.assign({}, b.meds, d.meds||{});
+  d.energy = d.energy||{};
+  d.mind = Object.assign({}, b.mind, d.mind||{});
+  d.work = Object.assign({}, b.work, d.work||{});
+  d.move = Object.assign({}, b.move, d.move||{});
+  return d;
+}
+
+/* ====================== COMPLETION ====================== */
+// each task counts as "logged" when its core fields are filled
+function isTaskDone(taskId){ return dayTaskDone(today(), taskId); }
+function dayTaskDone(day, taskId){
+  if(!day) return false;
+  if(taskId==='meds'){
+    // done when Risperidone (vital) is taken; Ashwagandha is optional
+    return !!(day.meds && day.meds.risperidone);
+  }
+  if(taskId==='energy'){
+    return ENERGY_POINTS.every(p=> day.energy && day.energy[p.id]);
+  }
+  if(taskId==='mind'){
+    const m=day.mind||{}; return m.mood&&m.motivation&&m.concentration&&m.productivity;
+  }
+  if(taskId==='work'){
+    const w=day.work||{}; return !!w.start && !!w.end && w.trueHours!=null;
+  }
+  if(taskId==='move'){
+    // movement counts as logged once steps set OR both activities decided
+    const mv=day.move||{};
+    return mv.steps>0 || mv.gymWent || mv.walkWent || mv._touched;
+  }
+  return false;
+}
+function completedCount(){ return TASKS.filter(t=>isTaskDone(t.id)).length; }
+function pctToday(){ return Math.round(completedCount()/TASKS.length*100); }
+
+/* ====================== STREAKS ====================== */
+function dateNDaysAgo(n){
+  const d = new Date(); d.setDate(d.getDate()-n);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function dayDoneAny(day){
+  if(!day) return false;
+  for(const t of TASKS){ if(dayTaskDone(day,t.id)) return true; }
+  return false;
+}
+function dayPerfect(day){
+  if(!day) return false;
+  return TASKS.every(t=>dayTaskDone(day,t.id));
+}
+function streak(pred){
+  let n=0;
+  for(let i=0;i<3650;i++){
+    const day = DB.days[dateNDaysAgo(i)];
+    if(pred(day)){ n++; }
+    else { if(i===0) continue; break; }
+  }
+  return n;
+}
+function overallStreak(){ return streak(dayDoneAny); }
+function perfectStreak(){ return streak(dayPerfect); }
+function taskStreak(taskId){ return streak(d=>dayTaskDone(d,taskId)); }
+
+/* ====================== RENDER CHECKLIST ====================== */
+function renderChecklist(){
+  const d = today();
+  const wrap = document.getElementById('checklist');
+  wrap.innerHTML = '';
+  TASKS.forEach(t=>{
+    const done = isTaskDone(t.id);
+    const card = document.createElement('div');
+    card.className = 'card'+(done?' done':'');
+    card.id = 'card-'+t.id;
+    card.innerHTML = `
+      <div class="card-head">
+        <div class="tick ${done?'on':''}" id="tick-${t.id}">✓</div>
+        <div class="ci ${t.cls}">${t.iconSvg}</div>
+        <div class="ctitle">
+          <div class="t">${t.title}</div>
+          <div class="s" id="sub-${t.id}">${t.sub}</div>
+        </div>
+        <div class="chev">▶</div>
+      </div>
+      <div class="card-body" id="body-${t.id}"><div class="card-inner">${buildBody(t,d)}</div></div>
+    `;
+    card.querySelector('.card-head').addEventListener('click',()=>toggleCard(t.id));
+    wrap.appendChild(card);
+    refreshSub(t.id);
+  });
+  updateHeader();
+}
+
+/* ---- rating button group helper ---- */
+function rateGroup(scale, lv, groupKey, current){
+  const cls = lv===5?'lv5':'lv3';
+  let html=`<div class="rate ${cls}" id="rate-${groupKey}">`;
+  scale.forEach(o=>{
+    const sel = current===o.v?'sel':'';
+    html+=`<button data-v="${o.v}" class="${sel}" onclick="pickRate('${groupKey}',${o.v})">
+      <span class="em">${o.em}</span>${o.label}</button>`;
+  });
+  return html+'</div>';
+}
+
+function buildBody(t,d){
+  let html='<div class="divider"></div>';
+
+  if(t.type==='meds'){
+    html += `<div class="tick-row ${d.meds.risperidone?'on':''}" onclick="toggleMed('risperidone')">
+      <div class="stick">✓</div><div class="tlbl">Risperidone</div></div>`;
+    html += `<div class="tick-row ${d.meds.ashwagandha?'on':''}" onclick="toggleMed('ashwagandha')">
+      <div class="stick">✓</div><div class="tlbl">Ashwagandha <span style="color:var(--txt3);font-weight:400;font-size:12px">· optional</span></div></div>`;
+    html += `<div class="note">This card counts as done once <b>Risperidone</b> is ticked — that's the vital one. Ashwagandha is tracked but optional.</div>`;
+  }
+
+  if(t.type==='energy'){
+    html += `<div class="note">Rate your energy at each point of <b>today</b>. This is what shows you where the slump hits.</div>`;
+    ENERGY_POINTS.forEach(p=>{
+      html += `<div class="rate-lbl">${p.label}</div>`;
+      html += rateGroup(ENERGY,5,'energy.'+p.id, d.energy[p.id]||null);
+    });
+  }
+
+  if(t.type==='mind'){
+    html += `<div class="rate-lbl">Mood</div>` + rateGroup(MOOD,5,'mind.mood', d.mind.mood);
+    html += `<div class="rate-lbl">Motivation</div>` + rateGroup(L3,3,'mind.motivation', d.mind.motivation);
+    html += `<div class="rate-lbl">Concentration</div>` + rateGroup(L3,3,'mind.concentration', d.mind.concentration);
+    html += `<div class="rate-lbl">Productivity</div>` + rateGroup(L3,3,'mind.productivity', d.mind.productivity);
+  }
+
+  if(t.type==='work'){
+    html += `<div class="note">Be honest with the focused hours — it's just for you, and the truth is what makes the pattern useful.</div>`;
+    html += `<div class="timegrid">
+      <div class="timefield"><label>Started work</label>
+        <input type="time" value="${d.work.start||''}" onchange="setWork('start',this.value)"></div>
+      <div class="timefield"><label>Ended work</label>
+        <input type="time" value="${d.work.end||''}" onchange="setWork('end',this.value)"></div>
+    </div>`;
+    html += `<div class="workband" id="workband">${workSpanText(d.work)}</div>`;
+    html += `<div class="hrs-input"><span class="ml">True focused hours</span>
+      <input type="number" inputmode="decimal" step="0.5" min="0" max="24" placeholder="—" value="${d.work.trueHours!=null?d.work.trueHours:''}" oninput="setTrueHours(this.value)"><span class="ru">hrs</span></div>`;
+    html += `<div class="goalgrid">
+      <div class="goalfield"><label>Goals achieved</label>
+        <div class="mc"><button class="stepb" onclick="stepGoals('done',-1)">−</button>
+        <span class="mval" id="goalsDone">${d.work.goalsDone}</span>
+        <button class="stepb" onclick="stepGoals('done',1)">+</button></div></div>
+      <div class="goalfield"><label>Out of (total)</label>
+        <div class="mc"><button class="stepb" onclick="stepGoals('total',-1)">−</button>
+        <span class="mval" id="goalsTotal">${d.work.goalsTotal}</span>
+        <button class="stepb" onclick="stepGoals('total',1)">+</button></div></div>
+    </div>`;
+    html += `<div class="stepper"><span class="ml">☕ Coffees today</span>
+      <div class="mc"><button class="stepb" onclick="stepCoffee(-1)">−</button>
+      <span class="mval" id="coffeeVal">${d.work.coffees}</span>
+      <button class="stepb" onclick="stepCoffee(1)">+</button></div></div>`;
+  }
+
+  if(t.type==='move'){
+    // Gym
+    html += `<div class="subhead">🏋️ Gym</div>`;
+    html += `<div class="tick-row ${d.move.gymWent?'on':''}" onclick="toggleWent('gym')">
+      <div class="stick">✓</div><div class="tlbl">I went to the gym</div></div>`;
+    html += `<div class="rate-lbl">How hard to get there?</div>` + rateGroup(L3_EFFORT,3,'move.gymEffort', d.move.gymEffort);
+    html += `<div class="rate-lbl">Performance</div>` + rateGroup(L3,3,'move.gymPerf', d.move.gymPerf);
+    // Walk
+    html += `<div class="subhead" style="margin-top:8px">🚶 Walk</div>`;
+    html += `<div class="tick-row ${d.move.walkWent?'on':''}" onclick="toggleWent('walk')">
+      <div class="stick">✓</div><div class="tlbl">I went for a walk</div></div>`;
+    html += `<div class="rate-lbl">How hard to get there?</div>` + rateGroup(L3_EFFORT,3,'move.walkEffort', d.move.walkEffort);
+    html += `<div class="rate-lbl">Performance</div>` + rateGroup(L3,3,'move.walkPerf', d.move.walkPerf);
+    // Steps
+    html += `<div class="stepper" style="margin-top:8px"><span class="ml">👟 Steps today</span>
+      <div class="mc"><input type="number" inputmode="numeric" placeholder="0" value="${d.move.steps||''}" style="width:90px;background:var(--surface3);border:1.5px solid var(--line);border-radius:8px;padding:9px;color:var(--txt);font-size:16px;font-family:inherit;text-align:center" oninput="setSteps(this.value)"></div></div>`;
+  }
+
+  return html;
+}
+
+/* ====================== INTERACTIONS ====================== */
+let openCard=null;
+function toggleCard(id){
+  const body=document.getElementById('body-'+id);
+  const card=document.getElementById('card-'+id);
+  if(openCard===id){ body.style.maxHeight='0'; card.classList.remove('open'); openCard=null; }
+  else{
+    if(openCard){ document.getElementById('body-'+openCard).style.maxHeight='0'; document.getElementById('card-'+openCard).classList.remove('open'); }
+    card.classList.add('open'); body.style.maxHeight=body.scrollHeight+60+'px'; openCard=id;
+  }
+}
+function reflow(id){ if(openCard===id){ const b=document.getElementById('body-'+id); b.style.maxHeight=b.scrollHeight+60+'px'; } }
+
+// generic rating setter using dotted path "group.key"
+function pickRate(path, v){
+  const d=today();
+  const [grp,key]=path.split('.');
+  if(grp==='energy'){ d.energy[key] = (d.energy[key]===v)?null:v; }
+  else { d[grp][key] = (d[grp][key]===v)?null:v; }
+  save();
+  const wrap=document.getElementById('rate-'+path);
+  if(wrap){
+    const cur = grp==='energy'? d.energy[key] : d[grp][key];
+    [...wrap.children].forEach(b=> b.classList.toggle('sel', +b.dataset.v===cur));
+  }
+  refreshSub(taskForGroup(grp)); updateHeader();
+}
+function taskForGroup(grp){
+  if(grp==='energy') return 'energy';
+  if(grp==='mind') return 'mind';
+  if(grp==='work') return 'work';
+  if(grp==='move') return 'move';
+  return grp;
+}
+
+function setWork(field,val){
+  const d=today(); d.work[field]=val||null; save();
+  const band=document.getElementById('workband'); if(band) band.innerHTML=workSpanText(d.work);
+  refreshSub('work'); updateHeader(); reflow('work');
+}
+function setTrueHours(val){
+  const d=today(); const n=parseFloat(val); d.work.trueHours=isNaN(n)?null:n; save();
+  refreshSub('work'); updateHeader();
+}
+function stepGoals(which,delta){
+  const d=today();
+  if(which==='done'){ d.work.goalsDone=Math.max(0,d.work.goalsDone+delta); document.getElementById('goalsDone').textContent=d.work.goalsDone; }
+  else { d.work.goalsTotal=Math.max(0,d.work.goalsTotal+delta); document.getElementById('goalsTotal').textContent=d.work.goalsTotal; }
+  if(d.work.goalsDone>d.work.goalsTotal && which==='total'){ /* allow */ }
+  save(); refreshSub('work');
+}
+function stepCoffee(delta){
+  const d=today(); d.work.coffees=Math.max(0,d.work.coffees+delta);
+  document.getElementById('coffeeVal').textContent=d.work.coffees; save();
+}
+function toggleMed(which){
+  const d=today();
+  d.meds[which]=!d.meds[which];
+  save();
+  const rows=document.querySelectorAll('#body-meds .tick-row');
+  if(rows[0]) rows[0].classList.toggle('on', d.meds.risperidone);
+  if(rows[1]) rows[1].classList.toggle('on', d.meds.ashwagandha);
+  refreshSub('meds'); updateHeader();
+}
+function toggleWent(which){
+  const d=today();
+  d.move._touched=true;
+  if(which==='gym') d.move.gymWent=!d.move.gymWent; else d.move.walkWent=!d.move.walkWent;
+  save();
+  // update visual
+  const rows=document.querySelectorAll('#body-move .tick-row');
+  if(rows[0]) rows[0].classList.toggle('on', d.move.gymWent);
+  if(rows[1]) rows[1].classList.toggle('on', d.move.walkWent);
+  refreshSub('move'); updateHeader();
+}
+function setSteps(val){
+  const d=today(); const n=parseInt(val,10); d.move.steps=isNaN(n)?0:n;
+  d.move._touched=true; save(); refreshSub('move'); updateHeader();
+}
+
+function refreshSub(id){
+  const t=TASKS.find(x=>x.id===id); if(!t) return;
+  const done=isTaskDone(id);
+  const card=document.getElementById('card-'+id);
+  const tick=document.getElementById('tick-'+id);
+  if(card) card.classList.toggle('done',done);
+  if(tick) tick.classList.toggle('on',done);
+  const subEl=document.getElementById('sub-'+id);
+  if(!subEl) return;
+  const d=today();
+  if(id==='meds'){
+    const bits=[];
+    if(d.meds.risperidone) bits.push('Risperidone ✓');
+    if(d.meds.ashwagandha) bits.push('Ashwagandha ✓');
+    subEl.textContent = bits.length? bits.join(' · ') : t.sub;
+  }else if(id==='energy'){
+    const n=ENERGY_POINTS.filter(p=>d.energy[p.id]).length;
+    subEl.textContent = n? `${n}/4 points rated` : t.sub;
+  }else if(id==='mind'){
+    const m=d.mind; const n=['mood','motivation','concentration','productivity'].filter(k=>m[k]).length;
+    subEl.textContent = n? `${n}/4 rated` : t.sub;
+  }else if(id==='work'){
+    const w=d.work;
+    if(w.trueHours!=null) subEl.textContent=`${w.trueHours}h focused · ${w.coffees}☕`;
+    else subEl.textContent=t.sub;
+  }else if(id==='move'){
+    const mv=d.move; const bits=[];
+    if(mv.gymWent) bits.push('gym'); if(mv.walkWent) bits.push('walk');
+    if(mv.steps>0) bits.push(mv.steps.toLocaleString()+' steps');
+    subEl.textContent = bits.length? bits.join(' · ') : t.sub;
+  }
+}
+
+function workSpanText(w){
+  if(!w.start||!w.end) return 'Set start & end to see your work span';
+  const span=minsBetween(w.start,w.end);
+  return `🕒 At desk: <b>${fmtDur(span)}</b>${w.trueHours!=null?` · focused: <b>${w.trueHours}h</b>`:''}`;
+}
+function minsBetween(a,b){
+  const [ah,am]=a.split(':').map(Number); const [bh,bm]=b.split(':').map(Number);
+  let m=(bh*60+bm)-(ah*60+am); if(m<0) m+=24*60; return m;
+}
+function fmtDur(mins){ const h=Math.floor(mins/60), m=mins%60; return m?`${h}h ${m}m`:`${h}h`; }
+
+/* ====================== HEADER ====================== */
+function updateHeader(){
+  const pct=pctToday();
+  const ring=document.getElementById('ring'); const circ=163.4;
+  ring.style.strokeDashoffset=circ-(circ*pct/100);
+  document.getElementById('ringPct').textContent=pct+'%';
+  const now=new Date();
+  document.getElementById('dateSub').textContent=now.toLocaleDateString('en-ZA',{weekday:'long',day:'numeric',month:'long'});
+  renderStreakChips();
+}
+function renderStreakChips(){
+  const wrap=document.getElementById('streaks');
+  const items=[
+    {label:'Logging streak', n:overallStreak(), flame:'🔥'},
+    ...TASKS.map(t=>({label:t.title.split(' ')[0], n:taskStreak(t.id), flame:t.iconSvg}))
+  ];
+  wrap.innerHTML=items.map(it=>`
+    <div class="chip ${it.n===0?'dead':''}">
+      <span class="flame">${it.flame}</span>
+      <div><span class="n">${it.n}</span> <span class="cl">${it.label}</span></div>
+    </div>`).join('');
+}
+
+/* ====================== STATS ====================== */
+let RANGE=7;
+function sortedDates(){ return Object.keys(DB.days).sort(); }
+function daysInRange(n){
+  const dates=sortedDates();
+  if(n>=9999 && dates.length){
+    const first=new Date(dates[0]); const today=new Date(todayStr());
+    const span=Math.round((today-first)/86400000)+1;
+    n=Math.min(n,Math.max(1,span));
+  } else if(n>=9999){ n=1; }
+  const out=[];
+  for(let i=n-1;i>=0;i--){ const ds=dateNDaysAgo(i); out.push({ds, day:DB.days[ds]}); }
+  return out;
+}
+function dayLoggedPct(day){
+  if(!day) return 0;
+  let c=0; TASKS.forEach(t=>{ if(dayTaskDone(day,t.id)) c++; });
+  return Math.round(c/TASKS.length*100);
+}
+function avgEnergy(day){
+  if(!day||!day.energy) return null;
+  const vals=ENERGY_POINTS.map(p=>day.energy[p.id]).filter(v=>v);
+  if(!vals.length) return null;
+  return vals.reduce((a,b)=>a+b,0)/vals.length;
+}
+
+function renderStats(){
+  const range=daysInRange(RANGE);
+  const real=range.filter(r=>r.day);
+
+  // glance
+  const moods=real.map(r=>r.day.mind&&r.day.mind.mood).filter(v=>v);
+  const avgMood=moods.length?(moods.reduce((a,b)=>a+b,0)/moods.length):0;
+  const energies=real.map(r=>avgEnergy(r.day)).filter(v=>v!=null);
+  const avgEn=energies.length?(energies.reduce((a,b)=>a+b,0)/energies.length):0;
+  const hrs=real.map(r=>r.day.work&&r.day.work.trueHours).filter(v=>v!=null);
+  const avgHrs=hrs.length?(hrs.reduce((a,b)=>a+b,0)/hrs.length):0;
+  const gymN=real.filter(r=>r.day.move&&r.day.move.gymWent).length;
+
+  document.getElementById('glanceStats').innerHTML=`
+    ${statBox(avgMood?scoreWord(avgMood,'mood'):'—','Typical mood','accent')}
+    ${statBox(avgEn?scoreWord(avgEn,'energy'):'—','Typical energy','accent')}
+    ${statBox(avgHrs?avgHrs.toFixed(1)+'h':'—','Avg focused hrs','good')}
+    ${statBox(gymN,'Gym sessions','good')}
+  `;
+
+  drawEnergyCurve(real);
+  drawMoodChart(range);
+  drawEnergyChart(range);
+  drawHoursChart(range);
+  drawStepsChart(range);
+  drawCoffeeBars(real);
+  drawGymMood(real);
+  drawMoodProd(real);
+  renderHistList(range);
+}
+function statBox(v,l,cls){ return `<div class="stat"><div class="sv ${cls||''}">${v}</div><div class="sl">${l}</div></div>`; }
+// turn a 1..5 average into a word (1=best)
+function scoreWord(v,type){
+  const scale = type==='mood'?MOOD:ENERGY;
+  const idx=Math.min(5,Math.max(1,Math.round(v)));
+  const o=scale.find(s=>s.v===idx);
+  return o?o.label:'—';
+}
+
+/* energy curve: average of each point across range */
+function drawEnergyCurve(real){
+  const pts=ENERGY_POINTS.map(p=>{
+    const vals=real.map(r=>r.day.energy&&r.day.energy[p.id]).filter(v=>v);
+    const avg=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
+    return {label:p.label, val:avg};
+  });
+  const has=pts.some(p=>p.val!=null);
+  const cv=document.getElementById('energyCurve');
+  if(!has){ clearCanvas(cv); return; }
+  // invert: 1(high) at top, 5(drained) at bottom -> plot 6-v so higher=better
+  invertedLineChart(cv, pts.map(p=>({label:p.label, val:p.val!=null?(6-p.val):null})), '#e87a5a');
+}
+
+function drawMoodChart(range){
+  const data=range.map(r=>({label:r.ds, val:(r.day&&r.day.mind&&r.day.mind.mood)?(6-r.day.mind.mood):null}));
+  scoreLineChart(document.getElementById('moodChart'), data, '#c85d7a');
+}
+function drawEnergyChart(range){
+  const data=range.map(r=>{ const a=avgEnergy(r.day); return {label:r.ds, val:a!=null?(6-a):null}; });
+  scoreLineChart(document.getElementById('energyChart'), data, '#e87a5a');
+}
+function drawHoursChart(range){
+  const data=range.map(r=>({label:r.ds, val:(r.day&&r.day.work&&r.day.work.trueHours!=null)?r.day.work.trueHours:0}));
+  const peak=Math.max(...data.map(d=>d.val),0);
+  // step 2h normally; widen to 4 then 6 on very long days, min top 10 so 8h always shows
+  const {max,ticks}=cleanAxis(peak, 10, 2, [2,4,6]);
+  barChart(document.getElementById('hoursChart'), data, {max, suffix:'h', color:'#6f9bd5', ticks});
+}
+function drawStepsChart(range){
+  const data=range.map(r=>({label:r.ds, val:(r.day&&r.day.move&&r.day.move.steps)||0}));
+  const peak=Math.max(...data.map(d=>d.val),0);
+  // step 2000 normally; widen to 4000 then 5000 on very high days, min top 10000 so 10k always shows
+  const {max,ticks}=cleanAxis(peak, 10000, 2000, [2000,4000,5000,10000]);
+  barChart(document.getElementById('stepsChart'), data, {max, suffix:'', color:'#a6d96a', kfmt:true, ticks});
+}
+
+/* coffee correlation bars */
+function drawCoffeeBars(real){
+  // bucket coffees 0,1,2,3,4+
+  const buckets=['0','1','2','3','4+'];
+  function bucketOf(c){ return c>=4?'4+':String(c); }
+  // concentration (3-level, 1 best) -> show as % good (invert to 0..100 where 1->100)
+  function avgScore(arr){ return arr.length? arr.reduce((a,b)=>a+b,0)/arr.length : null; }
+  const conc={}, en={};
+  buckets.forEach(b=>{conc[b]=[];en[b]=[];});
+  real.forEach(r=>{
+    const w=r.day.work||{}; const b=bucketOf(w.coffees||0);
+    if(r.day.mind&&r.day.mind.concentration) conc[b].push(4-r.day.mind.concentration); // 3->1,1->3 so higher=better
+    const a=avgEnergy(r.day); if(a!=null) en[b].push(6-a); // higher=better
+  });
+  document.getElementById('coffeeConcBars').innerHTML = corrBars(buckets, conc, 3, '☕');
+  document.getElementById('coffeeEnergyBars').innerHTML = corrBars(buckets, en, 5, '☕');
+}
+// render labelled bars from grouped score arrays; maxScore for width scaling
+function corrBars(keys, groups, maxScore, prefix){
+  let html='';
+  keys.forEach(k=>{
+    const arr=groups[k];
+    const avg=arr.length? arr.reduce((a,b)=>a+b,0)/arr.length : null;
+    const pct=avg!=null? Math.round(avg/maxScore*100):0;
+    const col= pct>=70?'var(--good)': pct>=45?'var(--mid)':'var(--hard)';
+    html+=`<div class="barrow">
+      <span class="bl">${prefix} ${k}</span>
+      <div class="bartrack"><div class="barseg" style="width:${pct}%;background:${col}"></div></div>
+      <span class="bn">${arr.length? avg.toFixed(1):'—'}</span>
+    </div>`;
+  });
+  return html;
+}
+
+function drawGymMood(real){
+  const went=[], skip=[];
+  real.forEach(r=>{
+    const m=r.day.mind&&r.day.mind.mood; if(!m) return;
+    const score=6-m; // higher=better
+    if(r.day.move&&r.day.move.gymWent) went.push(score); else skip.push(score);
+  });
+  const rows=[['Went to gym',went],['Didn\'t',skip]];
+  let html='';
+  rows.forEach(([lbl,arr])=>{
+    const avg=arr.length?arr.reduce((a,b)=>a+b,0)/arr.length:null;
+    const pct=avg!=null?Math.round(avg/5*100):0;
+    const col=pct>=70?'var(--good)':pct>=45?'var(--mid)':'var(--hard)';
+    html+=`<div class="barrow"><span class="bl">${lbl}</span>
+      <div class="bartrack"><div class="barseg" style="width:${pct}%;background:${col}"></div></div>
+      <span class="bn">${arr.length?avg.toFixed(1):'—'}</span></div>`;
+  });
+  document.getElementById('gymMoodBars').innerHTML=html;
+}
+
+function drawMoodProd(real){
+  // group by mood level 1..5, avg productivity (3-level, invert)
+  const groups={1:[],2:[],3:[],4:[],5:[]};
+  real.forEach(r=>{
+    const m=r.day.mind&&r.day.mind.mood; const p=r.day.mind&&r.day.mind.productivity;
+    if(m&&p) groups[m].push(4-p); // higher=better
+  });
+  let html='';
+  MOOD.forEach(mo=>{
+    const arr=groups[mo.v];
+    const avg=arr.length?arr.reduce((a,b)=>a+b,0)/arr.length:null;
+    const pct=avg!=null?Math.round(avg/3*100):0;
+    const col=pct>=70?'var(--good)':pct>=45?'var(--mid)':'var(--hard)';
+    html+=`<div class="barrow"><span class="bl">${mo.label}</span>
+      <div class="bartrack"><div class="barseg" style="width:${pct}%;background:${col}"></div></div>
+      <span class="bn">${arr.length?avg.toFixed(1):'—'}</span></div>`;
+  });
+  document.getElementById('moodProdBars').innerHTML=html;
+}
+
+function renderHistList(range){
+  const real=range.filter(r=>r.day).slice().reverse();
+  const wrap=document.getElementById('histList');
+  if(!real.length){ wrap.innerHTML='<div class="empty">No history yet.<br>Log a day and it shows up here.</div>'; return; }
+  wrap.innerHTML=real.map(r=>{
+    const pct=dayLoggedPct(r.day);
+    const mood=r.day.mind&&r.day.mind.mood;
+    const moodEm = mood? MOOD.find(m=>m.v===mood).em : '·';
+    const col= pct===100?'var(--good)': pct>=50?'var(--accent)': pct>0?'var(--mid)':'var(--line2)';
+    return `<div class="histrow">
+      <span class="hd">${shortDate(r.ds)}</span>
+      <span style="font-size:17px">${moodEm}</span>
+      <div class="hbar"><i style="width:${pct}%;background:${col}"></i></div>
+      <span class="hp">${pct}%</span>
+    </div>`;
+  }).join('');
+}
+
+/* ====================== CHART PRIMITIVES ====================== */
+function niceMax(v){ if(v<=4)return 4; if(v<=8)return 8; if(v<=12)return 12; if(v<=24)return Math.ceil(v/4)*4; return Math.ceil(v/10)*10; }
+function niceMaxSteps(v){ return Math.ceil(v/2000)*2000; }
+// build a clean axis: pick a step size from the allowed list so we get <=8 round gridlines
+function cleanAxis(peak, minTop, baseStep, stepChoices){
+  let top=Math.max(minTop, Math.ceil(peak/baseStep)*baseStep);
+  let step=baseStep;
+  // widen the step until we have at most 8 intervals, keeping round numbers
+  for(const s of stepChoices){
+    if(top/step<=8) break;
+    step=s; top=Math.max(minTop, Math.ceil(peak/step)*step);
+  }
+  while(top/step>8){ step*=2; top=Math.ceil(top/step)*step; }
+  return {max:top, ticks:Math.round(top/step)};
+}
+function setupCanvas(cv){
+  const dpr=window.devicePixelRatio||1; const w=cv.parentElement.clientWidth;
+  if(!cv.dataset.baseH){ cv.dataset.baseH=cv.getAttribute('height')||cv.height; }
+  const h=parseInt(cv.dataset.baseH,10);
+  cv.width=w*dpr; cv.height=h*dpr; cv.style.width=w+'px'; cv.style.height=h+'px';
+  const ctx=cv.getContext('2d'); ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr,dpr);
+  return {ctx,w,h};
+}
+function clearCanvas(cv){ const {ctx,w,h}=setupCanvas(cv); ctx.clearRect(0,0,w,h);
+  ctx.fillStyle='#736d87'; ctx.font='12px -apple-system,sans-serif'; ctx.textAlign='center'; ctx.fillText('No data yet',w/2,h/2); }
+function shortDate(ds){ const p=ds.split('-'); return p[2]+'/'+p[1]; }
+
+// line chart for 1..5 scores already inverted so higher=better; y labels show word scale
+function scoreLineChart(cv,data,color){
+  const {ctx,w,h}=setupCanvas(cv); ctx.clearRect(0,0,w,h);
+  const has=data.some(d=>d.val!=null);
+  if(!has){ ctx.fillStyle='#736d87';ctx.font='12px -apple-system,sans-serif';ctx.textAlign='center';ctx.fillText('No data yet',w/2,h/2); return; }
+  const pad={l:30,r:10,t:14,b:22}; const cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  ctx.lineWidth=1; ctx.font='10px -apple-system,sans-serif';
+  [1,3,5].forEach(v=>{
+    const yy=pad.t+ch*(1-(v-1)/4);
+    ctx.strokeStyle='#332e48';ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();
+    ctx.fillStyle='#736d87';ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillText(String(v),pad.l-6,yy);
+  });
+  ctx.textBaseline='alphabetic';
+  const n=data.length;
+  const x=i=> n===1?pad.l+cw/2: pad.l+(cw*i/(n-1));
+  const y=v=> pad.t+ch*(1-(v-1)/4);
+  ctx.strokeStyle=color; ctx.lineWidth=2.5; ctx.lineJoin='round';
+  let started=false; ctx.beginPath();
+  data.forEach((d,i)=>{ if(d.val==null){started=false;return;} const px=x(i),py=y(d.val); if(!started){ctx.moveTo(px,py);started=true;}else ctx.lineTo(px,py); });
+  ctx.stroke();
+  data.forEach((d,i)=>{ if(d.val==null)return; ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.fillStyle=color;ctx.fill();
+    ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.strokeStyle='#1d1a2e';ctx.lineWidth=1.5;ctx.stroke(); });
+  ctx.fillStyle='#736d87';ctx.font='10px -apple-system,sans-serif';ctx.textAlign='center';
+  const step=Math.ceil(n/6);
+  data.forEach((d,i)=>{ if(i%step===0||i===n-1) ctx.fillText(shortDate(d.label),x(i),h-7); });
+}
+
+// energy curve across 4 named points (already inverted higher=better)
+function invertedLineChart(cv,data,color){
+  const {ctx,w,h}=setupCanvas(cv); ctx.clearRect(0,0,w,h);
+  const pad={l:30,r:12,t:14,b:24}; const cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  ctx.lineWidth=1; ctx.font='10px -apple-system,sans-serif';
+  [1,3,5].forEach(v=>{
+    const yy=pad.t+ch*(1-(v-1)/4);
+    ctx.strokeStyle='#332e48';ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();
+    ctx.fillStyle='#736d87';ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillText(String(v),pad.l-6,yy);
+  });
+  ctx.textBaseline='alphabetic';
+  const n=data.length;
+  const x=i=> pad.l+(cw*i/(n-1));
+  const y=v=> pad.t+ch*(1-(v-1)/4);
+  // area fill
+  const pts=data.map((d,i)=>({x:x(i),y:d.val!=null?y(d.val):null}));
+  ctx.beginPath(); let started=false;
+  pts.forEach(p=>{ if(p.y==null){started=false;return;} if(!started){ctx.moveTo(p.x,p.y);started=true;}else ctx.lineTo(p.x,p.y); });
+  ctx.lineWidth=3; ctx.strokeStyle=color; ctx.lineJoin='round'; ctx.stroke();
+  data.forEach((d,i)=>{ if(d.val==null)return; ctx.beginPath();ctx.arc(x(i),y(d.val),4,0,7);ctx.fillStyle=color;ctx.fill();
+    ctx.beginPath();ctx.arc(x(i),y(d.val),4,0,7);ctx.strokeStyle='#1d1a2e';ctx.lineWidth=2;ctx.stroke(); });
+  ctx.fillStyle='#a5a0b8';ctx.font='11px -apple-system,sans-serif';ctx.textAlign='center';
+  data.forEach((d,i)=>{ ctx.fillText(d.label,x(i),h-8); });
+}
+
+function barChart(cv,data,opt){
+  const {ctx,w,h}=setupCanvas(cv); ctx.clearRect(0,0,w,h);
+  const pad={l:opt.kfmt?36:30,r:10,t:12,b:22}; const cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  const sfx=opt.suffix||'';
+  const ticks=opt.ticks||2; // number of intervals -> ticks+1 labels
+  ctx.lineWidth=1; ctx.font='10px -apple-system,sans-serif';
+  for(let k=0;k<=ticks;k++){
+    const f=k/ticks; const yy=pad.t+ch*(1-f); const val=opt.max*f;
+    ctx.strokeStyle='#332e48';ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();
+    ctx.fillStyle='#736d87';ctx.textAlign='right';ctx.textBaseline='middle';
+    ctx.fillText(opt.kfmt? kfmt(val):(Math.round(val*10)/10+sfx),pad.l-6,yy);
+  }
+  ctx.textBaseline='alphabetic';
+  const n=data.length; const gap=n>40?0.5:n>20?1:3; const bw=Math.max(1,(cw-gap*(n-1))/n);
+  ctx.font='10px -apple-system,sans-serif'; ctx.textAlign='center';
+  const step=Math.ceil(n/6);
+  data.forEach((d,i)=>{
+    const bx=pad.l+i*(bw+gap);
+    const bh=d.val>0?Math.max(2,ch*d.val/opt.max):0;
+    ctx.fillStyle=d.val>0?opt.color:'#252136';
+    roundRect(ctx,bx,pad.t+ch-bh,bw,bh||2,Math.max(0,Math.min(3,bw/2)));
+    if(i%step===0||i===n-1){ ctx.fillStyle='#736d87'; ctx.fillText(shortDate(d.label),bx+bw/2,h-7); }
+  });
+}
+function kfmt(v){ return v>=1000?(v/1000).toFixed(v>=10000?0:1)+'k':String(Math.round(v)); }
+function roundRect(ctx,x,y,w,h,r){
+  r=Math.max(0,Math.min(r,w/2,h/2))||0; if(w<=0||h<=0)return;
+  ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); ctx.fill();
+}
+
+/* ====================== PAGE NAV ====================== */
+function showPage(p){
+  document.getElementById('page-list').classList.toggle('hidden',p!=='list');
+  document.getElementById('page-stats').classList.toggle('hidden',p!=='stats');
+  document.getElementById('nav-list').classList.toggle('active',p==='list');
+  document.getElementById('nav-stats').classList.toggle('active',p==='stats');
+  window.scrollTo(0,0);
+  if(p==='stats') renderStats();
+}
+document.getElementById('rangeTabs').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b)return;
+  RANGE=parseInt(b.dataset.r,10);
+  [...document.getElementById('rangeTabs').children].forEach(x=>x.classList.toggle('active',x===b));
+  renderStats();
+});
+
+/* ====================== BACKUP / RESTORE ====================== */
+function exportData(){
+  const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a');
+  a.href=url; a.download='evening-reflection-backup-'+todayStr()+'.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000); toast('Backup downloaded');
+}
+function importData(e){
+  const f=e.target.files[0]; if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{ try{ const p=JSON.parse(r.result); if(!p.days)throw 0; DB=p; save(); renderChecklist(); toast('History restored'); }catch(err){ toast('Could not read that file'); } };
+  r.readAsText(f); e.target.value='';
+}
+function resetAll(){
+  let ok=true; try{ ok=confirm('Erase ALL history permanently? This cannot be undone. Back up first if unsure.'); }catch(e){ ok=true; }
+  if(ok){ DB={days:{}}; save(); renderChecklist(); renderStats(); toast('History erased'); }
+}
+
+/* ====================== TOAST ====================== */
+let toastT;
+function toast(msg){ const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('show'),2200); }
+
+/* ====================== MIDNIGHT ROLLOVER ====================== */
+let curDay=todayStr();
+function checkRollover(){ if(todayStr()!==curDay){ curDay=todayStr(); openCard=null; renderChecklist(); toast('New day — fresh log'); } }
+setInterval(checkRollover,30000);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) checkRollover(); });
+
+/* ====================== DEMO DATA ====================== */
+function loadDemo(){
+  let ok=true; try{ ok=confirm('Fill with 90 days of fake test data? Replaces current data — back up first if you have real entries.'); }catch(e){ ok=true; }
+  if(ok===false) return;
+  const days={};
+  const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+  for(let i=0;i<90;i++){
+    const dd=new Date(); dd.setDate(dd.getDate()-i);
+    const ds=dd.getFullYear()+'-'+String(dd.getMonth()+1).padStart(2,'0')+'-'+String(dd.getDate()).padStart(2,'0');
+    if(Math.random()<0.1 && i!==0) continue;
+    const d=blankDay();
+    // meds: risperidone taken ~92% of days, ashwagandha ~70%
+    d.meds.risperidone = Math.random()<0.92;
+    d.meds.ashwagandha = Math.random()<0.70;
+    // mood baseline for the day (1 best..5), drives correlations
+    const moodBase=ri(1,5);
+    d.mind.mood=Math.max(1,Math.min(5,moodBase+ri(-1,1)));
+    // energy: afternoon slump baked in (afternoon worse)
+    const base=Math.max(1,Math.min(5, d.mind.mood + ri(-1,1)));
+    d.energy.morning=Math.max(1,Math.min(5,base-1+ri(0,1)));
+    d.energy.midday=Math.max(1,Math.min(5,base+ri(-1,1)));
+    d.energy.afternoon=Math.max(1,Math.min(5,base+1+ri(-1,1))); // slump = higher number
+    d.energy.evening=Math.max(1,Math.min(5,base+ri(-1,1)));
+    // motivation/concentration/productivity track mood (better mood -> lower number=better)
+    const lv3=()=>Math.max(1,Math.min(3,Math.round(d.mind.mood/2)+ri(-1,1)));
+    d.mind.motivation=lv3(); d.mind.concentration=lv3(); d.mind.productivity=lv3();
+    // work
+    d.work.start=`0${ri(8,9)}:${['00','15','30','45'][ri(0,3)]}`;
+    d.work.end=`1${ri(6,8)}:${['00','15','30','45'][ri(0,3)]}`;
+    d.work.trueHours=ri(2,8)+ (Math.random()<0.5?0.5:0);
+    d.work.coffees=ri(0,5);
+    d.work.goalsTotal=ri(2,4); d.work.goalsDone=ri(0,d.work.goalsTotal);
+    // gym more likely on better-mood days
+    d.move.gymWent=Math.random() < (0.6 - (d.mind.mood-1)*0.1);
+    if(d.move.gymWent){ d.move.gymEffort=ri(1,3); d.move.gymPerf=ri(1,3); }
+    d.move.walkWent=Math.random()<0.5;
+    if(d.move.walkWent){ d.move.walkEffort=ri(1,3); d.move.walkPerf=ri(1,3); }
+    d.move.steps=ri(2,14)*1000+ri(0,999);
+    d.move._touched=true;
+    days[ds]=d;
+  }
+  DB={days}; save(); openCard=null; renderChecklist(); toast('90 days of test data loaded');
+}
+
+/* ====================== INIT ====================== */
+renderChecklist();
+</script>
+</body>
+</html>
