@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Morning">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="theme-color" content="#0f1115">
+<title>Morning Ritual</title>
+<style>
+:root{
+  --bg:#0f1115; --surface:#181b22; --surface2:#1f232c; --surface3:#262b36;
+  --line:#2c313c; --line2:#3a4151;
+  --txt:#eef1f6; --txt2:#9aa3b2; --txt3:#6b7382;
+  --accent:#f4a259; --accent2:#e8854a;
+  --good:#6fcf97; --mid:#f2c94c; --hard:#eb7c6a;
+  --blue:#5b9bd5; --purple:#9b8cdb;
+  --r:16px; --r2:12px; --r3:10px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:env(safe-area-inset-top) 0 0 0;overflow-x:hidden}
+.app{max-width:560px;margin:0 auto;padding:0 18px 120px}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.hidden{display:none!important}
+
+/* Header */
+header{padding:22px 2px 14px}
+.date-row{display:flex;justify-content:space-between;align-items:flex-end}
+.greet{font-size:26px;font-weight:700;letter-spacing:-.5px;line-height:1.1}
+.date-sub{font-size:13px;color:var(--txt2);margin-top:4px}
+.ring-wrap{display:flex;flex-direction:column;align-items:center}
+.ring-pct{font-size:15px;font-weight:700;margin-top:-2px}
+.ring-lbl{font-size:9px;color:var(--txt3);text-transform:uppercase;letter-spacing:.8px;margin-top:1px}
+
+/* Streak chips */
+.streaks{display:flex;gap:8px;margin:16px 0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.streaks::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r3);padding:8px 11px;display:flex;align-items:center;gap:7px;min-width:max-content}
+.chip .flame{font-size:15px;display:inline-flex;align-items:center}
+.chip .flame svg{width:15px;height:15px;display:block}
+.ci svg{display:block}
+.chip .n{font-size:15px;font-weight:700}
+.chip .cl{font-size:10px;color:var(--txt3);text-transform:uppercase;letter-spacing:.5px}
+.chip.perfect{border-color:var(--accent2)}
+.chip.dead{opacity:.45}
+
+/* Tabs nav */
+.tabnav{position:fixed;bottom:0;left:0;right:0;background:rgba(15,17,21,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;padding:8px 8px calc(8px + env(safe-area-inset-bottom));z-index:50}
+.tabnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:5px 0;color:var(--txt3);font-size:10px;font-weight:600}
+.tabnav button.active{color:var(--accent)}
+.tabnav .ic{font-size:21px;line-height:1}
+
+/* Checklist cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.card.done{border-color:rgba(111,207,151,.35)}
+.card-head{display:flex;align-items:center;gap:13px;padding:16px 15px}
+.tick{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:2px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:16px;color:transparent;transition:all .18s}
+.tick.on{background:var(--good);border-color:var(--good);color:#0f1115}
+.ci{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px}
+.ci.breath{background:rgba(91,155,213,.16)}
+.ci.sleep{background:rgba(126,140,219,.16)}
+.ci.meds{background:rgba(219,140,170,.16)}
+.ci.vits{background:rgba(224,169,78,.16)}
+.ci.med{background:rgba(155,140,219,.16)}
+.ci.elec{background:rgba(244,162,89,.16)}
+.ci.jour{background:rgba(111,207,151,.16)}
+.ci.mail{background:rgba(235,124,106,.16)}
+.ctitle{flex:1;min-width:0}
+.ctitle .t{font-size:16px;font-weight:600;letter-spacing:-.2px}
+.ctitle .s{font-size:12px;color:var(--txt2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{flex:0 0 auto;color:var(--txt3);font-size:13px;transition:transform .2s;padding:6px}
+.card.open .chev{transform:rotate(90deg)}
+.card-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.card-inner{padding:2px 15px 16px}
+.divider{height:1px;background:var(--line);margin:0 0 14px}
+
+/* Effort selector */
+.effort-lbl{font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.effort{display:flex;gap:8px}
+.effort button{flex:1;padding:11px 6px;border-radius:var(--r3);background:var(--surface2);border:1.5px solid var(--line);font-size:13px;font-weight:600;color:var(--txt2);transition:all .15s}
+.effort button .em{display:block;font-size:18px;margin-bottom:3px}
+.effort button[data-e="chilled"].sel{background:rgba(111,207,151,.16);border-color:var(--good);color:var(--good)}
+.effort button[data-e="steady"].sel{background:rgba(242,201,76,.14);border-color:var(--mid);color:var(--mid)}
+.effort button[data-e="grind"].sel{background:rgba(235,124,106,.16);border-color:var(--hard);color:var(--hard)}
+
+/* Sleep scale colours (green/yellow/red by easy/mid/hard) */
+.effort.sleepscale button.sel.easy{background:rgba(111,207,151,.16);border-color:var(--good);color:var(--good)}
+.effort.sleepscale button.sel.mid{background:rgba(242,201,76,.14);border-color:var(--mid);color:var(--mid)}
+.effort.sleepscale button.sel.hard{background:rgba(235,124,106,.16);border-color:var(--hard);color:var(--hard)}
+.effort.sleepscale{margin-bottom:14px}
+.effort.sleepscale button .em{font-size:16px}
+
+/* Time pickers */
+.timegrid{display:flex;gap:10px;margin-bottom:12px}
+.timefield{flex:1}
+.timefield label{display:block;font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.timefield input[type="time"]{width:100%;background:var(--surface2);border:1.5px solid var(--line);border-radius:var(--r3);padding:12px;color:var(--txt);font-size:17px;font-family:inherit;-webkit-appearance:none}
+.timefield input[type="time"]:focus{outline:none;border-color:var(--sleep,#7e8cdb)}
+.durband{background:rgba(126,140,219,.12);border:1px solid rgba(126,140,219,.25);border-radius:var(--r3);padding:11px 13px;font-size:13px;color:var(--txt);margin-bottom:14px;text-align:center}
+.durband b{color:#aeb6ec}
+
+/* Sub-checklist */
+.subs{margin-bottom:16px}
+.sub{display:flex;align-items:center;gap:11px;padding:11px 12px;background:var(--surface2);border-radius:var(--r3);margin-bottom:7px;border:1px solid transparent;transition:all .15s}
+.sub.on{border-color:rgba(111,207,151,.3)}
+.sub .stick{flex:0 0 auto;width:22px;height:22px;border-radius:6px;border:2px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:12px;color:transparent;transition:all .15s}
+.sub.on .stick{background:var(--good);border-color:var(--good);color:#0f1115}
+.sub .slbl{flex:1;font-size:14px;font-weight:500}
+.sub .saddr{font-size:11px;color:var(--txt3);margin-top:1px}
+
+/* Minutes stepper */
+.mins{display:flex;align-items:center;gap:14px;margin-bottom:16px;background:var(--surface2);border-radius:var(--r3);padding:13px 15px}
+.mins .ml{flex:1;font-size:14px;font-weight:500}
+.mins .mc{display:flex;align-items:center;gap:13px}
+.stepb{width:34px;height:34px;border-radius:9px;background:var(--surface3);font-size:20px;font-weight:600;color:var(--txt);display:flex;align-items:center;justify-content:center}
+.stepb:active{background:var(--line2)}
+.mval{font-size:20px;font-weight:700;min-width:54px;text-align:center}
+.mval span{font-size:12px;color:var(--txt3);font-weight:500}
+
+/* Breath guide */
+.steps{counter-reset:s;margin-bottom:14px}
+.step{display:flex;gap:12px;margin-bottom:13px}
+.step .sn{flex:0 0 auto;counter-increment:s;width:24px;height:24px;border-radius:50%;background:var(--surface3);color:var(--blue);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step .sn::before{content:counter(s)}
+.step .sx{flex:1;font-size:13.5px;line-height:1.5;color:var(--txt)}
+.step .sx b{color:var(--blue);font-weight:600}
+.note{font-size:12px;line-height:1.5;color:var(--txt2);background:var(--surface2);border-radius:var(--r3);padding:11px 13px;margin-bottom:14px}
+.note.warn{color:#f0b8ad;background:rgba(235,124,106,.1);border:1px solid rgba(235,124,106,.25)}
+.note b{color:var(--txt)}
+
+/* Retention logger */
+.ret-head{font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center}
+.ret-head button{font-size:11px;color:var(--blue);font-weight:600;text-transform:none;letter-spacing:0}
+.ret-rows{margin-bottom:16px}
+.ret-row{display:flex;align-items:center;gap:11px;margin-bottom:8px}
+.ret-row .rl{font-size:13px;color:var(--txt2);width:62px}
+.ret-row input{flex:1;background:var(--surface2);border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;color:var(--txt);font-size:15px;font-family:inherit;-webkit-appearance:none}
+.ret-row input:focus{outline:none;border-color:var(--blue)}
+.ret-row .ru{font-size:12px;color:var(--txt3);width:14px}
+
+/* Stats page */
+.h2{font-size:13px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.8px;margin:24px 2px 12px}
+.h2:first-child{margin-top:8px}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r2);padding:15px 14px}
+.stat .sv{font-size:27px;font-weight:700;letter-spacing:-1px}
+.stat .sl{font-size:11px;color:var(--txt2);margin-top:3px;font-weight:500}
+.stat .sv.accent{color:var(--accent)}
+.stat .sv.good{color:var(--good)}
+
+.range-tabs{display:flex;gap:7px;margin:0 0 14px}
+.range-tabs button{flex:1;padding:8px;border-radius:9px;background:var(--surface);border:1px solid var(--line);font-size:12px;font-weight:600;color:var(--txt2)}
+.range-tabs button.active{background:var(--surface3);border-color:var(--line2);color:var(--txt)}
+
+.chartcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 14px 10px;margin-bottom:12px}
+.chartcard .ct{font-size:14px;font-weight:600;margin-bottom:2px}
+.chartcard .cs{font-size:11px;color:var(--txt3);margin-bottom:14px}
+.chart{position:relative;width:100%}
+
+.legend{display:flex;gap:14px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.legend span{font-size:11px;color:var(--txt2);display:flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:50%}
+
+.barrow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.barrow .bl{font-size:12px;color:var(--txt2);width:74px;flex:0 0 auto}
+.bartrack{flex:1;height:9px;background:var(--surface3);border-radius:5px;overflow:hidden;display:flex}
+.barseg{height:100%}
+.barrow .bn{font-size:12px;font-weight:600;width:28px;text-align:right;flex:0 0 auto}
+
+.empty{text-align:center;color:var(--txt3);font-size:13px;padding:30px 20px;line-height:1.6}
+
+/* History list */
+.histrow{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r2);margin-bottom:8px}
+.histrow .hd{font-size:13px;font-weight:600;width:58px;flex:0 0 auto}
+.histrow .hbar{flex:1;height:7px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.histrow .hbar i{display:block;height:100%;border-radius:4px}
+.histrow .hp{font-size:13px;font-weight:700;width:42px;text-align:right;flex:0 0 auto}
+.histrow .hdots{display:flex;gap:3px;flex:0 0 auto}
+.hdots .hdt{width:6px;height:6px;border-radius:50%;background:var(--line2)}
+.hdots .hdt.on{background:var(--good)}
+
+/* Footer actions */
+.actions{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+.btn{padding:13px;border-radius:var(--r2);font-size:14px;font-weight:600;text-align:center;border:1px solid var(--line2);background:var(--surface)}
+.btn.ghost{color:var(--txt2)}
+.btn.danger{color:var(--hard);border-color:rgba(235,124,106,.3)}
+.foot-note{font-size:11px;color:var(--txt3);text-align:center;line-height:1.6;margin-top:14px;padding:0 10px}
+
+/* Toast */
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--surface3);border:1px solid var(--line2);color:var(--txt);padding:11px 18px;border-radius:24px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;z-index:100;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}
+.pop{animation:pop .3s ease}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ CHECKLIST PAGE ============ -->
+  <div id="page-list">
+    <header>
+      <div class="date-row">
+        <div>
+          <div class="greet" id="greet">Good morning</div>
+          <div class="date-sub" id="dateSub">—</div>
+        </div>
+        <div class="ring-wrap">
+          <svg width="62" height="62" viewBox="0 0 62 62">
+            <circle cx="31" cy="31" r="26" fill="none" stroke="#262b36" stroke-width="6"/>
+            <circle id="ring" cx="31" cy="31" r="26" fill="none" stroke="#f4a259" stroke-width="6"
+              stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="163.4"
+              transform="rotate(-90 31 31)" style="transition:stroke-dashoffset .5s"/>
+          </svg>
+          <div class="ring-pct" id="ringPct" style="margin-top:-42px">0%</div>
+          <div class="ring-lbl" style="margin-top:24px">Today</div>
+        </div>
+      </div>
+      <div class="streaks" id="streaks"></div>
+    </header>
+
+    <div id="checklist"></div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="exportData()">↓ Back up my history</button>
+      <button class="btn ghost" onclick="document.getElementById('importFile').click()">↑ Restore from backup</button>
+      <input type="file" id="importFile" accept=".json" class="hidden" onchange="importData(event)">
+      <button class="btn ghost" style="opacity:.5;font-size:12px" onclick="loadDemo()">⚙︎ Load 90 days of test data</button>
+    </div>
+    <div class="foot-note">
+      Everything is saved on this phone and works offline.<br>
+      Resets each morning at midnight. Back up now and then so a cleared browser can't wipe your streaks.
+    </div>
+  </div>
+
+  <!-- ============ STATS PAGE ============ -->
+  <div id="page-stats" class="hidden">
+    <header>
+      <div class="greet" style="font-size:24px">Progress</div>
+      <div class="date-sub">Your streaks, completion & effort over time</div>
+    </header>
+
+    <div class="range-tabs" id="rangeTabs">
+      <button data-r="7" class="active">7 days</button>
+      <button data-r="30">30 days</button>
+      <button data-r="90">90 days</button>
+      <button data-r="9999">All time</button>
+    </div>
+
+    <div class="h2">Streaks</div>
+    <div class="statgrid" id="streakStats"></div>
+
+    <div class="h2">Completion</div>
+    <div class="statgrid" id="compStats"></div>
+
+    <div class="chartcard">
+      <div class="ct">Daily completion %</div>
+      <div class="cs">How much of each morning you signed off</div>
+      <div class="chart"><canvas id="compChart" height="150"></canvas></div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Effort mix</div>
+      <div class="cs">How each task tended to feel</div>
+      <div id="effortBars"></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--good)"></i>Chilled</span>
+        <span><i class="dot" style="background:var(--mid)"></i>Steady</span>
+        <span><i class="dot" style="background:var(--hard)"></i>Grind</span>
+      </div>
+    </div>
+
+    <div class="chartcard">
+      <div class="ct">Meditation minutes</div>
+      <div class="cs">Total time logged per day</div>
+      <div class="chart"><canvas id="medChart" height="130"></canvas></div>
+    </div>
+
+    <div class="chartcard" id="retCard">
+      <div class="ct">Breath-hold retention</div>
+      <div class="cs">Best hold logged each day (seconds)</div>
+      <div class="chart"><canvas id="retChart" height="130"></canvas></div>
+    </div>
+
+    <div class="h2">Sleep & Wake</div>
+
+    <div class="statgrid" id="sleepStats"></div>
+
+    <div class="chartcard" id="bedCard" style="margin-top:12px">
+      <div class="ct">Time in bed</div>
+      <div class="cs">Lights-out to final wake, per day (hours)</div>
+      <div class="chart"><canvas id="bedChart" height="130"></canvas></div>
+    </div>
+
+    <div class="chartcard" id="startCard">
+      <div class="ct">Routine start time</div>
+      <div class="cs">When your morning got going — are you drifting later?</div>
+      <div class="chart"><canvas id="startChart" height="130"></canvas></div>
+    </div>
+
+    <div class="chartcard" id="wakeCompCard">
+      <div class="ct">Wake difficulty vs routine completion</div>
+      <div class="cs">Average % of the checklist done, by how hard waking was</div>
+      <div id="wakeCompBars"></div>
+    </div>
+
+    <div class="chartcard" id="qualWakeCard">
+      <div class="ct">Sleep quality vs wake difficulty</div>
+      <div class="cs">How waking felt, grouped by how well you slept</div>
+      <div id="qualWakeBars"></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--good)"></i>Bolted up</span>
+        <span><i class="dot" style="background:var(--mid)"></i>Groggy</span>
+        <span><i class="dot" style="background:var(--hard)"></i>Battled it</span>
+      </div>
+    </div>
+
+    <div class="chartcard" id="fallQualCard">
+      <div class="ct">Falling asleep vs staying asleep</div>
+      <div class="cs">Sleep quality grouped by how hard it was to drop off</div>
+      <div id="fallQualBars"></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--good)"></i>Slept through</span>
+        <span><i class="dot" style="background:var(--mid)"></i>Woke a bit</span>
+        <span><i class="dot" style="background:var(--hard)"></i>Kept waking</span>
+      </div>
+    </div>
+
+    <div class="h2">Recent days</div>
+    <div id="histList"></div>
+
+    <div class="actions">
+      <button class="btn danger" onclick="resetAll()">Erase all history</button>
+    </div>
+    <div class="foot-note">Erasing is permanent and can't be undone. Back up first from the checklist tab.</div>
+  </div>
+
+  <!-- ============ TAB NAV ============ -->
+  <nav class="tabnav">
+    <button id="nav-list" class="active" onclick="showPage('list')">
+      <span class="ic">◑</span><span>Checklist</span>
+    </button>
+    <button id="nav-stats" onclick="showPage('stats')">
+      <span class="ic">▦</span><span>Stats</span>
+    </button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+/* ====================== CONFIG ====================== */
+const EFFORTS = [
+  {k:'chilled', em:'😌', label:'Chilled'},
+  {k:'steady',  em:'😐', label:'Steady'},
+  {k:'grind',   em:'😤', label:'Grind'}
+];
+
+// Distinct 3-level scales for the sleep & wake tab
+const SLEEP_SCALES = {
+  wake:    [ {k:'easy',em:'⚡',label:'Bolted up'}, {k:'mid',em:'😴',label:'Groggy'}, {k:'hard',em:'🥱',label:'Battled it'} ],
+  fall:    [ {k:'easy',em:'💤',label:'Out cold'},  {k:'mid',em:'🛏️',label:'Took a while'}, {k:'hard',em:'🌙',label:'Tossed for ages'} ],
+  quality: [ {k:'easy',em:'😀',label:'Slept through'}, {k:'mid',em:'😐',label:'Woke a bit'}, {k:'hard',em:'😣',label:'Kept waking'} ]
+};
+
+const TASKS = [
+  {
+    id:'meds', icon:'💊', cls:'meds', title:'Medication',
+    iconSvg:'<svg width="22" height="22" viewBox="-16 -16 32 32" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-40)" fill="none" stroke="#db8caa" stroke-width="3"><rect x="-8" y="-13.5" width="16" height="27" rx="8"/><line x1="-8" y1="0" x2="8" y2="0"/></g></svg>',
+    sub:'3 to take',
+    type:'subs',
+    subs:[
+      {id:'sertraline', label:'Sertraline'},
+      {id:'budep', label:'Budep'},
+      {id:'concerta', label:'Concerta'}
+    ],
+    subRule:'all', // all three required
+    noEffort:true  // no effort rating on meds
+  },
+  {
+    id:'vits', icon:'🧬', cls:'vits', title:'Supplements',
+    iconSvg:'<svg width="22" height="22" viewBox="-16 -16 32 32" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(35)" fill="none" stroke="#e0a94e" stroke-width="3"><rect x="-7" y="-13" width="14" height="26" rx="7"/><line x1="-7" y1="0" x2="7" y2="0"/></g></svg>',
+    sub:'3 to take',
+    type:'subs',
+    subs:[
+      {id:'vitc', label:'Vitamin C'},
+      {id:'vitd', label:'Vitamin D'},
+      {id:'zinc', label:'Zinc'}
+    ],
+    subRule:'all', // all required
+    noEffort:true
+  },
+  {
+    id:'sleep', icon:'🌙', cls:'sleep', title:'Sleep & Wake',
+    iconSvg:'<svg width="22" height="22" viewBox="-16 -16 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 6 -11 A 13 13 0 1 0 11 6 A 10 10 0 0 1 6 -11 Z" fill="none" stroke="#7e8cdb" stroke-width="3" stroke-linejoin="round"/></svg>',
+    sub:'Last night & this morning',
+    type:'sleep', noEffort:true
+  },
+  {
+    id:'breath', icon:'🫁', cls:'breath', title:'Breathwork',
+    sub:'Wim Hof method · 3 rounds',
+    type:'breath'
+  },
+  {
+    id:'med', icon:'🧘', cls:'med', title:'Meditation',
+    sub:'Headspace session',
+    type:'minutes'
+  },
+  {
+    id:'elec', icon:'⚡', cls:'elec', title:'Electrolytes',
+    sub:'Morning electrolyte water',
+    type:'simple', effortLabel:'How easy was getting out of bed?'
+  },
+  {
+    id:'jour', icon:'📓', cls:'jour', title:'Journal',
+    sub:'5 sections',
+    type:'subs',
+    subs:[
+      {id:'grateful', label:'Grateful for'},
+      {id:'affirm', label:'Daily affirmation'},
+      {id:'goals3', label:'3 primary goals'},
+      {id:'weekly', label:'Weekly goal(s)'},
+      {id:'todo', label:"Today's to-do"}
+    ],
+    subRule:'guide' // journal done if ANY ticked (miss one still ok)
+  },
+  {
+    id:'mail', icon:'📧', cls:'mail', title:'Emails',
+    sub:'3 inboxes',
+    type:'subs',
+    subs:[
+      {id:'outlook', label:'Outlook'},
+      {id:'apple', label:'Apple Mail'},
+      {id:'gmail', label:'Gmail'}
+    ],
+    subRule:'all' // emails done only if ALL 3 ticked
+  }
+];
+
+/* ====================== STORAGE ====================== */
+const LS_KEY = 'morningRitual_v1';
+let DB = load();
+
+function load(){
+  try{ const r = localStorage.getItem(LS_KEY); if(r) return JSON.parse(r); }catch(e){}
+  return { days:{} }; // days[dateStr] = {tasks:{...}, effort:{...}, minutes, retention:[], subs:{}}
+}
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(DB)); }catch(e){ toast('Could not save — storage full?'); } }
+
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function today(){
+  const t = todayStr();
+  if(!DB.days[t]) DB.days[t] = { tasks:{}, effort:{}, subs:{}, minutes:0, retention:[], sleep:{} };
+  const d = DB.days[t];
+  d.tasks=d.tasks||{}; d.effort=d.effort||{}; d.subs=d.subs||{}; d.retention=d.retention||[]; if(d.minutes==null)d.minutes=0;
+  d.sleep=d.sleep||{};
+  return d;
+}
+
+/* ====================== TASK COMPLETION LOGIC ====================== */
+function sleepDone(sleepData){
+  if(!sleepData) return false;
+  return !!sleepData.lightsOut && !!sleepData.wakeTime &&
+         !!sleepData.wake && !!sleepData.fall && !!sleepData.quality;
+}
+function isTaskDone(taskId){
+  const d = today();
+  const t = TASKS.find(x=>x.id===taskId);
+  if(t.type==='sleep'){ return sleepDone(d.sleep); }
+  if(t.type==='subs'){
+    const s = d.subs[taskId]||{};
+    const ticked = t.subs.filter(x=>s[x.id]).length;
+    if(t.subRule==='all') return ticked===t.subs.length;
+    return ticked>=1; // guide: any one counts (journal)
+  }
+  return !!d.tasks[taskId];
+}
+function completedCount(){ return TASKS.filter(t=>isTaskDone(t.id)).length; }
+function pctToday(){ return Math.round(completedCount()/TASKS.length*100); }
+
+/* ====================== STREAKS ====================== */
+function dateNDaysAgo(n){
+  const d = new Date(); d.setDate(d.getDate()-n);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+// did a given day satisfy a predicate? day param = stored day obj or undefined
+function dayDoneAny(day){
+  if(!day) return false;
+  for(const t of TASKS){ if(dayTaskDone(day,t.id)) return true; }
+  return false;
+}
+function dayTaskDone(day, taskId){
+  if(!day) return false;
+  const t = TASKS.find(x=>x.id===taskId);
+  if(t.type==='sleep'){ return sleepDone(day.sleep); }
+  if(t.type==='subs'){
+    const s=(day.subs&&day.subs[taskId])||{};
+    const ticked=t.subs.filter(x=>s[x.id]).length;
+    if(t.subRule==='all') return ticked===t.subs.length;
+    return ticked>=1;
+  }
+  return !!(day.tasks&&day.tasks[taskId]);
+}
+function dayPerfect(day){
+  if(!day) return false;
+  return TASKS.every(t=>dayTaskDone(day,t.id));
+}
+// generic streak counter: pred(day)->bool, counting back from today
+function streak(pred){
+  let n=0;
+  // today only counts if satisfied; if not, streak is whatever's behind (still alive but 0 added today)
+  for(let i=0;i<3650;i++){
+    const ds = dateNDaysAgo(i);
+    const day = DB.days[ds];
+    if(pred(day)){ n++; }
+    else {
+      if(i===0) continue; // today not done yet — don't break, look back
+      break;
+    }
+  }
+  return n;
+}
+function overallStreak(){ return streak(dayDoneAny); }
+function perfectStreak(){ return streak(dayPerfect); }
+function taskStreak(taskId){ return streak(d=>dayTaskDone(d,taskId)); }
+
+/* ====================== RENDER CHECKLIST ====================== */
+function renderChecklist(){
+  const d = today();
+  const wrap = document.getElementById('checklist');
+  wrap.innerHTML = '';
+
+  TASKS.forEach(t=>{
+    const done = isTaskDone(t.id);
+    const card = document.createElement('div');
+    card.className = 'card'+(done?' done':'');
+    card.id = 'card-'+t.id;
+
+    let subText = t.sub;
+    const tickDriven = (t.type==='sleep' || t.type==='subs'); // completion comes from fields, not the tick
+    const tickAttr = tickDriven ? '' : `onclick="event.stopPropagation();toggleMain('${t.id}')"`;
+
+    card.innerHTML = `
+      <div class="card-head">
+        <div class="tick ${done?'on':''}${tickDriven?' auto':''}" id="tick-${t.id}" ${tickAttr}>✓</div>
+        <div class="ci ${t.cls}">${t.iconSvg || t.icon}</div>
+        <div class="ctitle">
+          <div class="t">${t.title}</div>
+          <div class="s" id="sub-${t.id}">${subText}</div>
+        </div>
+        <div class="chev">▶</div>
+      </div>
+      <div class="card-body" id="body-${t.id}"><div class="card-inner">${buildBody(t,d)}</div></div>
+    `;
+    card.querySelector('.card-head').addEventListener('click',()=>toggleCard(t.id));
+    wrap.appendChild(card);
+    refreshSub(t.id);
+  });
+
+  updateHeader();
+}
+
+function buildBody(t,d){
+  let html = '<div class="divider"></div>';
+
+  if(t.type==='breath'){
+    html += breathGuide();
+    html += retentionLogger(d);
+  }
+  if(t.type==='minutes'){
+    html += minutesStepper(d);
+  }
+  if(t.type==='sleep'){
+    html += sleepBody(d);
+  }
+  if(t.type==='subs'){
+    html += '<div class="subs">';
+    const s = d.subs[t.id]||{};
+    t.subs.forEach(sb=>{
+      const on = !!s[sb.id];
+      html += `<div class="sub ${on?'on':''}" onclick="toggleSub('${t.id}','${sb.id}')">
+        <div class="stick">✓</div>
+        <div>
+          <div class="slbl">${sb.label}</div>
+          ${sb.addr?`<div class="saddr">${sb.addr}</div>`:''}
+        </div>
+      </div>`;
+    });
+    html += '</div>';
+    if(t.subRule==='all') html += `<div class="note">All three inboxes must be ticked to complete this.</div>`;
+    else html += `<div class="note">These are a guide — the journal still counts if you miss one.</div>`;
+  }
+
+  // effort selector (all tasks except those flagged noEffort)
+  if(!t.noEffort){
+    const elabel = t.effortLabel || 'How did it feel?';
+    html += `<div class="effort-lbl">${elabel}</div><div class="effort" id="effort-${t.id}">`;
+    EFFORTS.forEach(e=>{
+      const sel = (d.effort[t.id]===e.k)?'sel':'';
+      html += `<button data-e="${e.k}" class="${sel}" onclick="setEffort('${t.id}','${e.k}')">
+        <span class="em">${e.em}</span>${e.label}</button>`;
+    });
+    html += '</div>';
+  }
+  return html;
+}
+
+function breathGuide(){
+  return `
+  <div class="note warn"><b>Safety:</b> always sit or lie down. Never do this in or near water, in the shower, or while driving — it can cause fainting. Skip if pregnant or if you have heart/respiratory conditions or a history of fainting without clearing it with a doctor first.</div>
+  <div class="steps">
+    <div class="step"><div class="sn"></div><div class="sx"><b>30 power breaths.</b> Sit or lie comfortably. Breathe in fully through nose or mouth (belly then chest), then let it out relaxed and unforced. Keep a steady rhythm, roughly one breath every 1–2 seconds. Tingling or light-headedness is normal.</div></div>
+    <div class="step"><div class="sn"></div><div class="sx"><b>Exhale & hold empty.</b> After the 30th breath, exhale and stop breathing. Hold on empty lungs, fully relaxed, until you feel a strong urge to breathe. Don't force it — it's not a competition.</div></div>
+    <div class="step"><div class="sn"></div><div class="sx"><b>Recovery breath.</b> Take one deep breath in, fill the lungs, and hold for about 15 seconds. Then release. That's one round.</div></div>
+    <div class="step"><div class="sn"></div><div class="sx"><b>Repeat for 3 rounds.</b> Log your hold times below if you like, then sit quietly for a moment before getting up.</div></div>
+  </div>`;
+}
+
+function retentionLogger(d){
+  let rows='';
+  for(let i=0;i<3;i++){
+    const v = d.retention[i]!=null?d.retention[i]:'';
+    rows += `<div class="ret-row">
+      <span class="rl">Round ${i+1}</span>
+      <input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="—" value="${v}"
+        oninput="setRetention(${i},this.value)">
+      <span class="ru">s</span>
+    </div>`;
+  }
+  return `<div class="ret-head"><span>Breath-hold times (optional)</span></div><div class="ret-rows">${rows}</div>`;
+}
+
+function minutesStepper(d){
+  return `
+  <div class="mins">
+    <span class="ml">Minutes meditated</span>
+    <div class="mc">
+      <button class="stepb" onclick="changeMins(-1)">−</button>
+      <div class="mval"><span id="mval">${d.minutes}</span> <span>min</span></div>
+      <button class="stepb" onclick="changeMins(1)">+</button>
+    </div>
+  </div>
+  <div class="note">Tick the circle above once you've done your Headspace session.</div>`;
+}
+
+function sleepScale(d, field, scale, label){
+  let html=`<div class="effort-lbl">${label}</div><div class="effort sleepscale" id="sleep-${field}">`;
+  scale.forEach(e=>{
+    const sel = (d.sleep[field]===e.k)?('sel '+e.k):'';
+    html += `<button data-e="${e.k}" class="${sel}" onclick="setSleep('${field}','${e.k}')">
+      <span class="em">${e.em}</span>${e.label}</button>`;
+  });
+  return html+'</div>';
+}
+function sleepBody(d){
+  const lo=d.sleep.lightsOut||'';
+  const wk=d.sleep.wakeTime||'';
+  const dur=sleepDuration(d.sleep);
+  return `
+  <div class="note">Bedtime is for <b>last night</b> — just estimate it this morning. Final wake is when you're up for good (after the 5am pill wake).</div>
+  <div class="timegrid">
+    <div class="timefield">
+      <label>Lights out (last night)</label>
+      <input type="time" value="${lo}" onchange="setSleepTime('lightsOut',this.value)">
+    </div>
+    <div class="timefield">
+      <label>Final wake / start</label>
+      <input type="time" value="${wk}" onchange="setSleepTime('wakeTime',this.value)">
+    </div>
+  </div>
+  <div class="durband" id="durband">${dur!=null?`🛏️ Time in bed: <b>${fmtDur(dur)}</b>`:'Set both times to see time in bed'}</div>
+
+  <div class="mins" style="margin-top:4px">
+    <span class="ml">Times you snoozed</span>
+    <div class="mc">
+      <button class="stepb" onclick="changeSnooze(-1)">−</button>
+      <div class="mval"><span id="snoozeval">${d.sleep.snooze||0}</span></div>
+      <button class="stepb" onclick="changeSnooze(1)">+</button>
+    </div>
+  </div>
+
+  ${sleepScale(d,'wake',SLEEP_SCALES.wake,'How hard was waking?')}
+  ${sleepScale(d,'fall',SLEEP_SCALES.fall,'How hard was falling asleep?')}
+  ${sleepScale(d,'quality',SLEEP_SCALES.quality,'Did you stay asleep?')}
+  `;
+}
+// minutes between two HH:MM, treating lights-out as previous evening if it's later clock-time than wake
+function sleepDuration(s){
+  if(!s||!s.lightsOut||!s.wakeTime) return null;
+  const [lh,lm]=s.lightsOut.split(':').map(Number);
+  const [wh,wm]=s.wakeTime.split(':').map(Number);
+  let mins=(wh*60+wm)-(lh*60+lm);
+  if(mins<=0) mins+=24*60; // crossed midnight
+  return mins;
+}
+function fmtDur(mins){
+  const h=Math.floor(mins/60), m=mins%60;
+  return m? `${h}h ${m}m` : `${h}h`;
+}
+
+/* ====================== INTERACTIONS ====================== */
+let openCard = null;
+function toggleCard(id){
+  const body = document.getElementById('body-'+id);
+  const card = document.getElementById('card-'+id);
+  if(openCard===id){
+    body.style.maxHeight='0'; card.classList.remove('open'); openCard=null;
+  }else{
+    if(openCard){
+      document.getElementById('body-'+openCard).style.maxHeight='0';
+      document.getElementById('card-'+openCard).classList.remove('open');
+    }
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight+40+'px';
+    openCard=id;
+  }
+}
+function reflow(id){ // recompute height if open
+  if(openCard===id){ const b=document.getElementById('body-'+id); b.style.maxHeight=b.scrollHeight+40+'px'; }
+}
+
+function toggleMain(id){
+  const d=today();
+  d.tasks[id] = !d.tasks[id];
+  save(); refreshSub(id); updateHeader();
+  const tk=document.getElementById('tick-'+id);
+  if(tk){ tk.classList.add('pop'); setTimeout(()=>tk.classList.remove('pop'),300); }
+}
+function toggleSub(taskId, subId){
+  const d=today();
+  if(!d.subs[taskId]) d.subs[taskId]={};
+  d.subs[taskId][subId] = !d.subs[taskId][subId];
+  save();
+  // re-render that card body subs visual
+  const t=TASKS.find(x=>x.id===taskId);
+  const s=d.subs[taskId];
+  const subsWrap=document.querySelector('#body-'+taskId+' .subs');
+  if(subsWrap){
+    [...subsWrap.children].forEach((el,i)=>{
+      const sb=t.subs[i];
+      if(s[sb.id]) el.classList.add('on'); else el.classList.remove('on');
+    });
+  }
+  refreshSub(taskId); updateHeader();
+}
+function setEffort(taskId, k){
+  const d=today();
+  d.effort[taskId] = (d.effort[taskId]===k)?null:k;
+  save();
+  const wrap=document.getElementById('effort-'+taskId);
+  if(wrap) [...wrap.children].forEach(b=> b.classList.toggle('sel', b.dataset.e===d.effort[taskId]));
+}
+function changeMins(delta){
+  const d=today();
+  d.minutes=Math.max(0,(d.minutes||0)+delta);
+  document.getElementById('mval').textContent=d.minutes;
+  save();
+}
+function setRetention(i,val){
+  const d=today();
+  const n=parseInt(val,10);
+  d.retention[i] = isNaN(n)?null:n;
+  save();
+}
+function setSleepTime(field,val){
+  const d=today();
+  d.sleep[field]=val||null;
+  save();
+  // update the duration band live
+  const band=document.getElementById('durband');
+  const dur=sleepDuration(d.sleep);
+  if(band) band.innerHTML = dur!=null? `🛏️ Time in bed: <b>${fmtDur(dur)}</b>` : 'Set both times to see time in bed';
+  refreshSub('sleep'); updateHeader(); reflow('sleep');
+}
+function setSleep(field,k){
+  const d=today();
+  d.sleep[field] = (d.sleep[field]===k)?null:k;
+  save();
+  const wrap=document.getElementById('sleep-'+field);
+  if(wrap) [...wrap.children].forEach(b=>{
+    const on = b.dataset.e===d.sleep[field];
+    b.classList.remove('sel','easy','mid','hard');
+    if(on){ b.classList.add('sel', b.dataset.e); }
+  });
+  refreshSub('sleep'); updateHeader();
+}
+function changeSnooze(delta){
+  const d=today();
+  d.sleep.snooze=Math.max(0,(d.sleep.snooze||0)+delta);
+  document.getElementById('snoozeval').textContent=d.sleep.snooze;
+  save();
+}
+
+function refreshSub(id){
+  const t=TASKS.find(x=>x.id===id);
+  const done=isTaskDone(id);
+  const card=document.getElementById('card-'+id);
+  const tick=document.getElementById('tick-'+id);
+  card.classList.toggle('done',done);
+  if(tick) tick.classList.toggle('on',done);
+  // dynamic subtitle
+  const subEl=document.getElementById('sub-'+id);
+  if(subEl){
+    const d=today();
+    if(t.type==='subs'){
+      const s=d.subs[id]||{}; const n=t.subs.filter(x=>s[x.id]).length;
+      subEl.textContent=`${n}/${t.subs.length} ticked`;
+    }else if(t.type==='minutes'){
+      subEl.textContent = d.minutes>0?`${d.minutes} min logged`:t.sub;
+    }else if(t.type==='sleep'){
+      const dur=sleepDuration(d.sleep);
+      subEl.textContent = dur!=null? `${fmtDur(dur)} in bed` : t.sub;
+    }else{
+      subEl.textContent=t.sub;
+    }
+  }
+}
+
+/* ====================== HEADER ====================== */
+function updateHeader(){
+  const pct=pctToday();
+  const ring=document.getElementById('ring');
+  const circ=163.4;
+  ring.style.strokeDashoffset = circ-(circ*pct/100);
+  document.getElementById('ringPct').textContent=pct+'%';
+
+  const now=new Date();
+  const h=now.getHours();
+  document.getElementById('greet').textContent = h<12?'Good morning':h<18?'Good afternoon':'Good evening';
+  document.getElementById('dateSub').textContent = now.toLocaleDateString('en-ZA',{weekday:'long',day:'numeric',month:'long'});
+
+  renderStreakChips();
+}
+function renderStreakChips(){
+  const wrap=document.getElementById('streaks');
+  const items=[
+    {label:'Overall', n:overallStreak(), flame:'🔥', cls:''},
+    {label:'Perfect days', n:perfectStreak(), flame:'⭐', cls:'perfect'},
+    ...TASKS.map(t=>({label:t.title, n:taskStreak(t.id), flame:t.iconSvg||t.icon, cls:''}))
+  ];
+  wrap.innerHTML = items.map(it=>`
+    <div class="chip ${it.cls} ${it.n===0?'dead':''}">
+      <span class="flame">${it.flame}</span>
+      <div><span class="n">${it.n}</span> <span class="cl">${it.label}</span></div>
+    </div>`).join('');
+}
+
+/* ====================== STATS ====================== */
+let RANGE=7;
+function sortedDates(){
+  return Object.keys(DB.days).sort();
+}
+function daysInRange(n){
+  // "All time" passes a huge n — cap it to the actual span of tracked data
+  const dates=sortedDates();
+  if(n>=9999 && dates.length){
+    const first=new Date(dates[0]);
+    const today=new Date(todayStr());
+    const span=Math.round((today-first)/86400000)+1;
+    n=Math.min(n, Math.max(1, span));
+  } else if(n>=9999){
+    n=1;
+  }
+  const out=[];
+  for(let i=n-1;i>=0;i--){
+    const ds=dateNDaysAgo(i);
+    out.push({ds, day:DB.days[ds]});
+  }
+  return out;
+}
+function dayPct(day){
+  if(!day) return 0;
+  let c=0; TASKS.forEach(t=>{ if(dayTaskDone(day,t.id)) c++; });
+  return Math.round(c/TASKS.length*100);
+}
+
+function renderStats(){
+  // streak stats
+  document.getElementById('streakStats').innerHTML=`
+    ${statBox(overallStreak(),'Overall streak','accent')}
+    ${statBox(perfectStreak(),'Perfect-day streak','accent')}
+    ${statBox(bestStreakEver(),'Best ever','good')}
+    ${statBox(totalActiveDays(),'Days tracked','')}
+  `;
+
+  // completion stats for range
+  const range=daysInRange(RANGE);
+  const tracked=range.filter(r=>r.day);
+  const avg = tracked.length? Math.round(tracked.reduce((a,r)=>a+dayPct(r.day),0)/tracked.length):0;
+  const perfectN = range.filter(r=>dayPerfect(r.day)).length;
+  const totalMin = range.reduce((a,r)=>a+((r.day&&r.day.minutes)||0),0);
+  const bestHold = Math.max(0,...range.flatMap(r=>(r.day&&r.day.retention)||[]).filter(x=>x!=null));
+
+  document.getElementById('compStats').innerHTML=`
+    ${statBox(avg+'%','Avg completion','')}
+    ${statBox(perfectN,'Perfect days','good')}
+    ${statBox(totalMin+'m','Meditation total','')}
+    ${statBox(bestHold? bestHold+'s':'—','Best breath-hold','')}
+  `;
+
+  drawCompChart(range);
+  drawEffortBars();
+  drawMedChart(range);
+  drawRetChart(range);
+  drawSleepStats(range);
+  renderHistList();
+}
+function statBox(v,l,cls){
+  return `<div class="stat"><div class="sv ${cls}">${v}</div><div class="sl">${l}</div></div>`;
+}
+function bestStreakEver(){
+  const dates=sortedDates();
+  if(!dates.length) return 0;
+  let best=0,cur=0,prev=null;
+  // iterate continuous calendar from first tracked date to today
+  const start=new Date(dates[0]); const end=new Date(todayStr());
+  for(let d=new Date(start); d<=end; d.setDate(d.getDate()+1)){
+    const ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    if(dayDoneAny(DB.days[ds])){ cur++; best=Math.max(best,cur); } else cur=0;
+  }
+  return best;
+}
+function totalActiveDays(){ return Object.values(DB.days).filter(dayDoneAny).length; }
+
+/* ---- canvas line chart (completion) ---- */
+function niceMax(v){
+  // round up to a clean even number so 0/half/max all read nicely
+  if(v<=10) return 10;
+  if(v<=20) return 20;
+  if(v<=50) return Math.ceil(v/10)*10;
+  if(v<=100) return Math.ceil(v/20)*20;
+  return Math.ceil(v/50)*50;
+}
+function drawCompChart(range){
+  const cv=document.getElementById('compChart');
+  lineChart(cv, range.map(r=>({label:r.ds, val:dayPct(r.day)})), {max:100, suffix:'%', color:'#f4a259', fill:true});
+}
+function drawMedChart(range){
+  const cv=document.getElementById('medChart');
+  const data=range.map(r=>({label:r.ds, val:(r.day&&r.day.minutes)||0}));
+  const max=niceMax(Math.max(10,...data.map(d=>d.val)));
+  barChart(cv, data, {max, suffix:'m', color:'#9b8cdb'});
+}
+function drawRetChart(range){
+  const data=range.map(r=>{
+    const ret=(r.day&&r.day.retention)||[];
+    const best=Math.max(0,...ret.filter(x=>x!=null));
+    return {label:r.ds, val:best};
+  });
+  const has=data.some(d=>d.val>0);
+  document.getElementById('retCard').style.display= has?'block':'none';
+  if(has){
+    const max=niceMax(Math.max(30,...data.map(d=>d.val)));
+    barChart(document.getElementById('retChart'), data, {max, suffix:'s', color:'#5b9bd5'});
+  }
+}
+
+/* ---- Sleep & Wake stats ---- */
+function timeToMin(hhmm){ if(!hhmm) return null; const [h,m]=hhmm.split(':').map(Number); return h*60+m; }
+
+function drawSleepStats(range){
+  const withSleep = range.filter(r=>r.day && r.day.sleep && (r.day.sleep.lightsOut||r.day.sleep.wake));
+  const hasAny = withSleep.length>0;
+  // toggle all sleep cards
+  ['bedCard','startCard','wakeCompCard','qualWakeCard','fallQualCard'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.style.display = hasAny?'block':'none';
+  });
+
+  // summary stats
+  const durs = withSleep.map(r=>sleepDuration(r.day.sleep)).filter(x=>x!=null);
+  const avgDur = durs.length? Math.round(durs.reduce((a,b)=>a+b,0)/durs.length):0;
+  const snoozes = withSleep.map(r=>r.day.sleep.snooze||0);
+  const avgSnooze = snoozes.length? (snoozes.reduce((a,b)=>a+b,0)/snoozes.length):0;
+  const goodNights = withSleep.filter(r=>r.day.sleep.quality==='easy').length;
+  const goodWakes = withSleep.filter(r=>r.day.sleep.wake==='easy').length;
+  document.getElementById('sleepStats').innerHTML=`
+    ${statBox(avgDur? fmtDur(avgDur):'—','Avg time in bed','accent')}
+    ${statBox(avgSnooze? avgSnooze.toFixed(1):'0','Avg snoozes','')}
+    ${statBox(goodNights,'Slept-through nights','good')}
+    ${statBox(goodWakes,'Easy wake-ups','good')}
+  `;
+
+  // time in bed (hours) line
+  const bedData=range.map(r=>{
+    const dur = r.day&&r.day.sleep? sleepDuration(r.day.sleep):null;
+    return {label:r.ds, val: dur!=null? +(dur/60).toFixed(2):0};
+  });
+  const bedMax=niceMax(Math.max(8,...bedData.map(d=>d.val)));
+  barChart(document.getElementById('bedChart'), bedData, {max:bedMax, suffix:'h', color:'#7e8cdb'});
+
+  // routine start time line (minutes since midnight -> shown as clock)
+  const startData=range.map(r=>{
+    const t = r.day&&r.day.sleep? timeToMin(r.day.sleep.wakeTime):null;
+    return {label:r.ds, val: t!=null? t:null};
+  });
+  startTimeChart(document.getElementById('startChart'), startData);
+
+  // correlation 1: wake difficulty -> avg completion %
+  const wakeGroups={easy:[],mid:[],hard:[]};
+  withSleep.forEach(r=>{ const w=r.day.sleep.wake; if(w&&wakeGroups[w]) wakeGroups[w].push(dayPct(r.day)); });
+  const wakeLabels={easy:'Bolted up',mid:'Groggy',hard:'Battled it'};
+  let html1='';
+  ['easy','mid','hard'].forEach(k=>{
+    const arr=wakeGroups[k];
+    const avg=arr.length? Math.round(arr.reduce((a,b)=>a+b,0)/arr.length):0;
+    const col=k==='easy'?'var(--good)':k==='mid'?'var(--mid)':'var(--hard)';
+    html1+=`<div class="barrow">
+      <span class="bl">${wakeLabels[k]}</span>
+      <div class="bartrack"><div class="barseg" style="width:${avg}%;background:${col}"></div></div>
+      <span class="bn">${arr.length?avg+'%':'—'}</span>
+    </div>`;
+  });
+  document.getElementById('wakeCompBars').innerHTML=html1;
+
+  // correlation 2: sleep quality -> wake difficulty mix
+  document.getElementById('qualWakeBars').innerHTML =
+    groupMix(withSleep, 'quality', 'wake', {easy:'Slept through',mid:'Woke a bit',hard:'Kept waking'});
+
+  // correlation 3: fall-asleep difficulty -> sleep quality mix
+  document.getElementById('fallQualBars').innerHTML =
+    groupMix(withSleep, 'fall', 'quality', {easy:'Out cold',mid:'Took a while',hard:'Tossed'});
+}
+
+// build stacked-mix rows: group rows by groupField, colour segments by valueField (easy/mid/hard)
+function groupMix(rows, groupField, valueField, groupLabels){
+  let html='';
+  ['easy','mid','hard'].forEach(gk=>{
+    const inGroup=rows.filter(r=>r.day.sleep[groupField]===gk);
+    const counts={easy:0,mid:0,hard:0};
+    inGroup.forEach(r=>{ const v=r.day.sleep[valueField]; if(v&&counts[v]!=null) counts[v]++; });
+    const total=counts.easy+counts.mid+counts.hard;
+    let segs='';
+    if(total){
+      segs=`<div class="barseg" style="width:${counts.easy/total*100}%;background:var(--good)"></div>
+            <div class="barseg" style="width:${counts.mid/total*100}%;background:var(--mid)"></div>
+            <div class="barseg" style="width:${counts.hard/total*100}%;background:var(--hard)"></div>`;
+    }
+    html+=`<div class="barrow">
+      <span class="bl">${groupLabels[gk]}</span>
+      <div class="bartrack">${segs}</div>
+      <span class="bn">${total||'—'}</span>
+    </div>`;
+  });
+  return html;
+}
+
+// line chart specialised for clock times (y axis shows HH:MM)
+function startTimeChart(cv,data){
+  const {ctx,w,h}=setupCanvas(cv);
+  ctx.clearRect(0,0,w,h);
+  const vals=data.map(d=>d.val).filter(v=>v!=null);
+  if(!vals.length){ return; }
+  let lo=Math.min(...vals), hi=Math.max(...vals);
+  // pad the range by 30 min each side, round to half hours
+  lo=Math.floor((lo-30)/30)*30; hi=Math.ceil((hi+30)/30)*30;
+  if(hi-lo<60){ hi=lo+60; }
+  const pad={l:42,r:10,t:14,b:22};
+  const cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  const fmtClock=m=>{ const hh=Math.floor(m/60)%24, mm=m%60; return String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0'); };
+  ctx.lineWidth=1; ctx.font='10px -apple-system,sans-serif';
+  [0,.5,1].forEach(f=>{
+    const yy=pad.t+ch*(1-f); const val=lo+(hi-lo)*f;
+    ctx.strokeStyle='#2c313c'; ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();
+    ctx.fillStyle='#6b7382'; ctx.textAlign='right'; ctx.textBaseline='middle';
+    ctx.fillText(fmtClock(Math.round(val)), pad.l-6, yy);
+  });
+  ctx.textBaseline='alphabetic';
+  const n=data.length;
+  const x=i=> n===1?pad.l+cw/2: pad.l+(cw*i/(n-1));
+  const y=v=> pad.t+ch*(1-(v-lo)/(hi-lo));
+  // draw line only across points that exist; gaps where null
+  ctx.strokeStyle='#7e8cdb'; ctx.lineWidth=2.5; ctx.lineJoin='round';
+  let started=false;
+  ctx.beginPath();
+  data.forEach((d,i)=>{
+    if(d.val==null){ started=false; return; }
+    const px=x(i),py=y(d.val);
+    if(!started){ ctx.moveTo(px,py); started=true; } else ctx.lineTo(px,py);
+  });
+  ctx.stroke();
+  data.forEach((d,i)=>{ if(d.val==null) return; ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.fillStyle='#7e8cdb';ctx.fill();
+    ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.strokeStyle='#181b22';ctx.lineWidth=1.5;ctx.stroke(); });
+  ctx.fillStyle='#6b7382'; ctx.font='10px -apple-system,sans-serif'; ctx.textAlign='center';
+  const step=Math.ceil(n/6);
+  data.forEach((d,i)=>{ if(i%step===0||i===n-1){ ctx.fillText(shortDate(d.label),x(i),h-7); } });
+}
+
+function setupCanvas(cv){
+  const dpr=window.devicePixelRatio||1;
+  const w=cv.parentElement.clientWidth;
+  // store the intended CSS height once, so re-renders don't compound it
+  if(!cv.dataset.baseH){ cv.dataset.baseH = cv.getAttribute('height')||cv.height; }
+  const h=parseInt(cv.dataset.baseH,10);
+  cv.width=w*dpr; cv.height=h*dpr;
+  cv.style.width=w+'px'; cv.style.height=h+'px';
+  const ctx=cv.getContext('2d'); ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr,dpr);
+  return {ctx,w,h};
+}
+function lineChart(cv,data,opt){
+  const {ctx,w,h}=setupCanvas(cv);
+  ctx.clearRect(0,0,w,h);
+  const pad={l:34,r:10,t:14,b:22};
+  const cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  const max=opt.max;
+  const sfx=opt.suffix||'';
+  // gridlines + y labels
+  ctx.lineWidth=1; ctx.font='10px -apple-system,sans-serif';
+  [0,.5,1].forEach(f=>{
+    const yy=pad.t+ch*(1-f);
+    ctx.strokeStyle='#2c313c'; ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();
+    ctx.fillStyle='#6b7382'; ctx.textAlign='right'; ctx.textBaseline='middle';
+    ctx.fillText(Math.round(max*f)+sfx, pad.l-6, yy);
+  });
+  ctx.textBaseline='alphabetic';
+  const n=data.length;
+  const x=i=> n===1?pad.l+cw/2: pad.l+(cw*i/(n-1));
+  const y=v=> pad.t+ch*(1-v/max);
+  // fill
+  if(opt.fill){
+    ctx.beginPath(); ctx.moveTo(x(0),y(data[0].val));
+    data.forEach((d,i)=>ctx.lineTo(x(i),y(d.val)));
+    ctx.lineTo(x(n-1),pad.t+ch); ctx.lineTo(x(0),pad.t+ch); ctx.closePath();
+    ctx.fillStyle='rgba(244,162,89,.12)'; ctx.fill();
+  }
+  // line
+  ctx.beginPath(); ctx.lineWidth=2.5; ctx.strokeStyle=opt.color; ctx.lineJoin='round';
+  data.forEach((d,i)=>{ const px=x(i),py=y(d.val); i?ctx.lineTo(px,py):ctx.moveTo(px,py); });
+  ctx.stroke();
+  // points
+  data.forEach((d,i)=>{ ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.fillStyle=opt.color;ctx.fill();
+    ctx.beginPath();ctx.arc(x(i),y(d.val),3,0,7);ctx.strokeStyle='#181b22';ctx.lineWidth=1.5;ctx.stroke(); });
+  // x labels (sparse)
+  ctx.fillStyle='#6b7382'; ctx.font='10px -apple-system,sans-serif'; ctx.textAlign='center';
+  const step=Math.ceil(n/6);
+  data.forEach((d,i)=>{ if(i%step===0||i===n-1){ ctx.fillText(shortDate(d.label),x(i),h-7); } });
+}
+function barChart(cv,data,opt){
+  const {ctx,w,h}=setupCanvas(cv);
+  ctx.clearRect(0,0,w,h);
+  const pad={l:34,r:10,t:12,b:22};
+  const cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  const sfx=opt.suffix||'';
+  // gridlines + y labels
+  ctx.lineWidth=1; ctx.font='10px -apple-system,sans-serif';
+  [0,.5,1].forEach(f=>{
+    const yy=pad.t+ch*(1-f);
+    ctx.strokeStyle='#2c313c'; ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();
+    ctx.fillStyle='#6b7382'; ctx.textAlign='right'; ctx.textBaseline='middle';
+    ctx.fillText(Math.round(opt.max*f)+sfx, pad.l-6, yy);
+  });
+  ctx.textBaseline='alphabetic';
+  const n=data.length;
+  const gap=n>40?0.5:n>20?1:3;
+  const bw=Math.max(1,(cw-gap*(n-1))/n);
+  ctx.font='10px -apple-system,sans-serif'; ctx.textAlign='center';
+  const step=Math.ceil(n/6);
+  data.forEach((d,i)=>{
+    const bx=pad.l+i*(bw+gap);
+    const bh=d.val>0? Math.max(2,ch*d.val/opt.max):0;
+    ctx.fillStyle = d.val>0?opt.color:'#262b36';
+    roundRect(ctx,bx,pad.t+ch-bh,bw,bh||2,Math.max(0,Math.min(3,bw/2)));
+    if(i%step===0||i===n-1){ ctx.fillStyle='#6b7382'; ctx.fillText(shortDate(d.label),bx+bw/2,h-7); }
+  });
+}
+function roundRect(ctx,x,y,w,h,r){
+  r=Math.max(0,Math.min(r,w/2,h/2))||0;
+  if(w<=0||h<=0){ return; }
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); ctx.fill();
+}
+function shortDate(ds){ const p=ds.split('-'); return p[2]+'/'+p[1]; }
+
+/* ---- effort bars ---- */
+function drawEffortBars(){
+  const range=daysInRange(RANGE);
+  const wrap=document.getElementById('effortBars');
+  let html='';
+  TASKS.forEach(t=>{
+    const counts={chilled:0,steady:0,grind:0};
+    range.forEach(r=>{ const e=r.day&&r.day.effort&&r.day.effort[t.id]; if(e&&counts[e]!=null) counts[e]++; });
+    const total=counts.chilled+counts.steady+counts.grind;
+    let segs='';
+    if(total){
+      segs=`<div class="barseg" style="width:${counts.chilled/total*100}%;background:var(--good)"></div>
+            <div class="barseg" style="width:${counts.steady/total*100}%;background:var(--mid)"></div>
+            <div class="barseg" style="width:${counts.grind/total*100}%;background:var(--hard)"></div>`;
+    }
+    html+=`<div class="barrow">
+      <span class="bl">${t.title}</span>
+      <div class="bartrack">${segs}</div>
+      <span class="bn">${total||'—'}</span>
+    </div>`;
+  });
+  wrap.innerHTML=html;
+}
+
+/* ---- history list ---- */
+function renderHistList(){
+  const range=daysInRange(RANGE).slice().reverse();
+  const wrap=document.getElementById('histList');
+  const real=range.filter(r=>r.day);
+  if(!real.length){ wrap.innerHTML='<div class="empty">No history yet.<br>Tick something off this morning and it will show up here.</div>'; return; }
+  wrap.innerHTML = real.map(r=>{
+    const pct=dayPct(r.day);
+    const dots=TASKS.map(t=>`<i class="hdt ${dayTaskDone(r.day,t.id)?'on':''}"></i>`).join('');
+    const col= pct===100?'var(--good)': pct>=60?'var(--accent)': pct>0?'var(--mid)':'var(--line2)';
+    return `<div class="histrow">
+      <span class="hd">${shortDate(r.ds)}</span>
+      <div class="hdots">${dots}</div>
+      <div class="hbar"><i style="width:${pct}%;background:${col}"></i></div>
+      <span class="hp">${pct}%</span>
+    </div>`;
+  }).join('');
+}
+
+/* ====================== PAGE NAV ====================== */
+function showPage(p){
+  document.getElementById('page-list').classList.toggle('hidden',p!=='list');
+  document.getElementById('page-stats').classList.toggle('hidden',p!=='stats');
+  document.getElementById('nav-list').classList.toggle('active',p==='list');
+  document.getElementById('nav-stats').classList.toggle('active',p==='stats');
+  window.scrollTo(0,0);
+  if(p==='stats') renderStats();
+}
+document.getElementById('rangeTabs').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  RANGE=parseInt(b.dataset.r,10);
+  [...document.getElementById('rangeTabs').children].forEach(x=>x.classList.toggle('active',x===b));
+  renderStats();
+});
+
+/* ====================== BACKUP / RESTORE ====================== */
+function exportData(){
+  const blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='morning-ritual-backup-'+todayStr()+'.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  toast('Backup downloaded');
+}
+function importData(e){
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const parsed=JSON.parse(r.result);
+      if(!parsed.days) throw new Error('bad file');
+      DB=parsed; save(); renderChecklist(); toast('History restored');
+    }catch(err){ toast('Could not read that file'); }
+  };
+  r.readAsText(f); e.target.value='';
+}
+function resetAll(){
+  let ok=true;
+  try{ ok=confirm('Erase ALL history permanently? This cannot be undone. Back up first if unsure.'); }
+  catch(e){ ok=true; }
+  if(ok){
+    DB={days:{}}; save(); renderChecklist(); renderStats(); toast('History erased');
+  }
+}
+
+/* ====================== TOAST ====================== */
+let toastT;
+function toast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('show'),2200);
+}
+
+/* ====================== MIDNIGHT ROLLOVER ====================== */
+let curDay=todayStr();
+function checkRollover(){
+  if(todayStr()!==curDay){
+    curDay=todayStr();
+    openCard=null;
+    renderChecklist();
+    toast('Fresh morning — checklist reset');
+  }
+}
+setInterval(checkRollover,30000);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) checkRollover(); });
+
+/* ====================== DEMO / TEST DATA ====================== */
+function loadDemo(){
+  let ok=true;
+  try{ ok=confirm('Fill the app with 90 days of fake test data? This replaces current data — back up first if you have real entries.'); }
+  catch(e){ ok=true; }
+  if(ok===false) return;
+  const days={};
+  const efforts=['chilled','steady','grind'];
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  for(let i=0;i<90;i++){
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    // ~12% of days fully skipped to test streak breaks
+    if(Math.random()<0.12 && i!==0){ continue; }
+    const day={tasks:{},effort:{},subs:{},minutes:0,retention:[],sleep:{}};
+    // each task done with ~80% probability
+    TASKS.forEach(t=>{
+      if(t.type==='sleep') return; // handled below
+      const doIt=Math.random()<0.8;
+      if(t.type==='subs'){
+        day.subs[t.id]={};
+        if(doIt){ t.subs.forEach(sb=>{ if(Math.random()<0.9) day.subs[t.id][sb.id]=true; }); }
+      } else if(doIt){ day.tasks[t.id]=true; }
+      if(doIt && !t.noEffort) day.effort[t.id]=pick(efforts);
+    });
+    if(day.tasks.med || Math.random()<0.7){ day.minutes=[5,10,10,15,15,20][Math.floor(Math.random()*6)]; }
+    if(day.tasks.breath){ day.retention=[60+Math.floor(Math.random()*60),75+Math.floor(Math.random()*70),80+Math.floor(Math.random()*80)]; }
+    // sleep & wake — with a mild built-in correlation (rough night -> harder wake)
+    if(Math.random()<0.85){
+      const lvl=['easy','mid','hard'];
+      const qIdx=Math.floor(Math.random()*3);
+      const quality=lvl[qIdx];
+      // wake difficulty leans toward sleep quality, with some noise
+      let wIdx=qIdx + (Math.random()<0.4 ? (Math.random()<0.5?-1:1) : 0);
+      wIdx=Math.max(0,Math.min(2,wIdx));
+      const fall=lvl[Math.floor(Math.random()*3)];
+      // lights out 21:30–00:30, final wake 06:30–08:00
+      const loH=[21,22,22,23,23,0][Math.floor(Math.random()*6)];
+      const loM=[0,15,30,45][Math.floor(Math.random()*4)];
+      const wkH=[6,6,7,7,7,8][Math.floor(Math.random()*6)];
+      const wkM=[0,15,30,45][Math.floor(Math.random()*4)];
+      day.sleep={
+        lightsOut:String(loH).padStart(2,'0')+':'+String(loM).padStart(2,'0'),
+        wakeTime:String(wkH).padStart(2,'0')+':'+String(wkM).padStart(2,'0'),
+        wake:lvl[wIdx], fall, quality,
+        snooze: wIdx===2 ? 1+Math.floor(Math.random()*4) : Math.floor(Math.random()*2)
+      };
+    }
+    days[ds]=day;
+  }
+  DB={days}; save(); openCard=null; renderChecklist();
+  toast('90 days of test data loaded');
+}
+
+/* ====================== INIT ====================== */
+renderChecklist();
+
+</script>
+</body>
+</html>
