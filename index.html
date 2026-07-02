@@ -64,6 +64,7 @@ header{padding:22px 2px 14px}
 .ci.breath{background:rgba(91,155,213,.16)}
 .ci.sleep{background:rgba(126,140,219,.16)}
 .ci.meds{background:rgba(219,140,170,.16)}
+.ci.vits{background:rgba(224,169,78,.16)}
 .ci.med{background:rgba(155,140,219,.16)}
 .ci.elec{background:rgba(244,162,89,.16)}
 .ci.jour{background:rgba(111,207,151,.16)}
@@ -379,6 +380,19 @@ const TASKS = [
     ],
     subRule:'all', // all three required
     noEffort:true  // no effort rating on meds
+  },
+  {
+    id:'vits', icon:'🧬', cls:'vits', title:'Supplements',
+    iconSvg:'<svg width="22" height="22" viewBox="-16 -16 32 32" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(35)" fill="none" stroke="#e0a94e" stroke-width="3"><rect x="-7" y="-13" width="14" height="26" rx="7"/><line x1="-7" y1="0" x2="7" y2="0"/></g></svg>',
+    sub:'3 to take',
+    type:'subs',
+    subs:[
+      {id:'vitc', label:'Vitamin C'},
+      {id:'vitd', label:'Vitamin D'},
+      {id:'zinc', label:'Zinc'}
+    ],
+    subRule:'all', // all required
+    noEffort:true
   },
   {
     id:'sleep', icon:'🌙', cls:'sleep', title:'Sleep & Wake',
